@@ -1,0 +1,8 @@
+strona bazy:
+https://61505.myadmin.tld.pl/index.php?db=baza61505_dawid&lang=pl
+Nazawa bazy: baza61505_dawid
+adres serwera( host) : 61505.myadmin.tld.pl
+nazwa uzytkownika: admin61505_dawid
+haslo admi: 6HzbIu5^bH
+nazwa usera z ograniczonym dostepem: user61505_dawid
+haslo do usera z og. dost: 4Vb8Icfm0B
