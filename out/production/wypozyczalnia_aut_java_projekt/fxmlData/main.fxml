@@ -34,12 +34,15 @@
          <font>
             <Font name="Verdana" size="12.0" />
          </font></Label>
-      <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="153.0" text="Zarejetstruj się" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+      <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="153.0" text="Zarejetstruj się" GridPane.columnIndex="3" GridPane.rowIndex="5">
+         <font>
+            <Font name="Verdana" size="12.0" />
+         </font></Button>
       <Button id="catalogBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="311.0" text="Przejrzyj katalog aut" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="2">
          <font>
             <Font name="Verdana" size="12.0" />
          </font></Button>
-      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="266.0" text="Zaloguj się do systemu:" textAlignment="CENTER" GridPane.columnSpan="2" GridPane.rowIndex="2">
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="313.0" text="Zaloguj się do systemu:" textAlignment="CENTER" GridPane.columnSpan="2" GridPane.rowIndex="2">
          <font>
             <Font name="Verdana" size="16.0" />
          </font>
