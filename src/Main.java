@@ -1,3 +1,4 @@
+import controllers.SqlConnector;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -9,6 +10,7 @@ import controllers.ConfigClass;
 import javafx.scene.control.Button;
 
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class Main extends Application implements EventHandler<ActionEvent> {
 

@@ -9,7 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class SqlConnector {
-    public Connection conn;
+    public static Connection conn;
     public Connection getConnection() {
 
         String dbName="rent_cars_app";
