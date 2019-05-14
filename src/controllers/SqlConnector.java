@@ -15,8 +15,8 @@ public class SqlConnector {
     private ResultSet response;
     private Statement statement;
 
-    public Connection getConnection(String connectionName) {
-
+    public void getConnection(String connectionName) {
+        System.out.println(connectionName);
         switch (connectionName)
         {
             case "localhost":
@@ -29,6 +29,10 @@ public class SqlConnector {
 
                     conn = DriverManager.getConnection("jdbc:mysql://localhost/" + dbName+"?serverTimezone=UTC", user , password);
                     statement = conn.createStatement();
+                    System.out.println("trening");
+                    System.out.println(response);
+                    System.out.println(statement);
+
                 }
                 catch (Exception e) {
                     e.printStackTrace();
@@ -37,13 +41,15 @@ public class SqlConnector {
             default:
                 System.out.println("brak polaczenia");
                 break;
-        }
 
-        return conn;
+        }
     }
 
     public ResultSet getData(String query)
     {
+        System.out.println("getData");
+        System.out.println(response);
+        System.out.println(statement);
         try
         {
             response = statement.executeQuery(query);
@@ -52,6 +58,7 @@ public class SqlConnector {
         } catch (Exception ex)
         {
             System.out.println(ex);
+            System.out.println("dupa");
         }
         return response;
     }

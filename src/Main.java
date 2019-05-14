@@ -15,11 +15,12 @@ import java.sql.Statement;
 public class Main extends Application implements EventHandler<ActionEvent> {
 
     private Button loginBtn;
+    public ConfigClass configClass;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         String connectionName = "localhost";
-        ConfigClass configClass = new ConfigClass(connectionName);
+        configClass = new ConfigClass(connectionName);
         Parent root = FXMLLoader.load(getClass().getResource("/fxmlData/main.fxml"));
         primaryStage.setTitle(configClass.mainTitle);
 
