@@ -20,6 +20,7 @@ public class UserEntity {
     }
 
     public void loginUser(String login, String password){
+
         System.out.println(login);
         System.out.println(password);
         String query = "SELECT email, password FROM users WHERE active = 1 AND email = '" + login + "' AND password = '" + password + "'";
