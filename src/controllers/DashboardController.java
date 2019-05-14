@@ -7,6 +7,7 @@ import javafx.scene.control.*;
 
 import javafx.event.ActionEvent;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -20,7 +21,7 @@ public class DashboardController implements Initializable
     {
     }
     @FXML
-    public void loginAction(ActionEvent actionEvent) throws SQLException {
+    public void loginAction(ActionEvent actionEvent) throws SQLException, IOException {
         String login = loginLabel.getText();
         String password = passwordField.getText();
         UserEntity user = new UserEntity();
