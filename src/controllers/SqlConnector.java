@@ -11,9 +11,9 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class SqlConnector {
-    public static Connection conn;
-    private static ResultSet response;
-    private static Statement statement;
+    private Connection conn;
+    private ResultSet response;
+    private Statement statement;
 
     public Connection getConnection(String connectionName) {
 
@@ -42,7 +42,7 @@ public class SqlConnector {
         return conn;
     }
 
-    public static ResultSet getData(String query)
+    public ResultSet getData(String query)
     {
         try
         {
