@@ -1,16 +1,17 @@
 package entities;
 
 import controllers.SqlConnector;
+import javafx.scene.control.Alert;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class UserEntity {
     SqlConnector sqlConnector;
     public UserEntity() {
         sqlConnector = new SqlConnector();
         sqlConnector.getConnection("localhost");
-
-        System.out.println("polaczenie udalo sie");
     }
     public void registerUser(String login, String password) {
         System.out.println(login);
@@ -27,7 +28,7 @@ public class UserEntity {
 //    }
     }
 
-    public void loginUser(String login, String password){
+    public void loginUser(String login, String password) throws SQLException {
 
         System.out.println(login);
         System.out.println(password);
@@ -35,6 +36,24 @@ public class UserEntity {
         System.out.println(query);
         ResultSet userData = sqlConnector.getData(query);
         System.out.println(userData);
+        userData.last();
+        int size = userData.getRow(); //check user exist
+        if (size == 0)
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Nie poprawny login lub hasło");
+            alert.setHeaderText("Nie poprawny login lub hasło");
+            alert.setContentText("Nie poprawny login lub hasło");
+
+            alert.showAndWait();
+        }
+        else
+        {
+            //
+        }
+
+
+
 //            String connectionName = "localhost";
 ////            ConfigClass configClass = new ConfigClass(connectionName);
 ////

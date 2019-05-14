@@ -20,18 +20,15 @@ public class SqlConnector {
         switch (connectionName)
         {
             case "localhost":
-                String dbName="rent_cars_app";
-                String user="root";
-                String password="";
+                String dbName="baza61505_dawid";
+                String user="admin61505_dawid";
+                String password="6HzbIu5^bH";
 
                 try {
                     Class.forName("com.mysql.cj.jdbc.Driver");
 
-                    conn = DriverManager.getConnection("jdbc:mysql://localhost/" + dbName+"?serverTimezone=UTC", user , password);
+                    conn = DriverManager.getConnection("jdbc:mysql://61505.m.tld.pl:3306/" + dbName+"?serverTimezone=UTC", user , password);
                     statement = conn.createStatement();
-                    System.out.println("trening");
-                    System.out.println(response);
-                    System.out.println(statement);
 
                 }
                 catch (Exception e) {
@@ -47,7 +44,6 @@ public class SqlConnector {
 
     public ResultSet getData(String query)
     {
-        System.out.println("getData");
         System.out.println(response);
         System.out.println(statement);
         try
@@ -58,8 +54,8 @@ public class SqlConnector {
         } catch (Exception ex)
         {
             System.out.println(ex);
-            System.out.println("dupa");
         }
+
         return response;
     }
 }
