@@ -1,9 +1,7 @@
 package entities;
 
-import controllers.ConfigClass;
-
-import java.sql.Connection;
-import java.sql.Statement;
+import controllers.SqlConnector;
+import java.sql.ResultSet;
 
 public class UserEntity {
     public void registerUser(String login, String password) {
@@ -24,6 +22,8 @@ public class UserEntity {
     public void loginUser(String login, String password){
         System.out.println(login);
         System.out.println(password);
+        String query = "SELECT email, password FROM users WHERE active = 1 AND email = '" + login + "' AND password = '" + password + "'";
+        ResultSet isUserExist = SqlConnector.getData(query);
 
 //            String connectionName = "localhost";
 ////            ConfigClass configClass = new ConfigClass(connectionName);

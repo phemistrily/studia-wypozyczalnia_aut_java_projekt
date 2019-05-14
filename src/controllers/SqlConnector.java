@@ -7,25 +7,52 @@ package controllers;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class SqlConnector {
     public static Connection conn;
-    public Connection getConnection() {
+    private static ResultSet response;
+    private static Statement statement;
 
-        String dbName="rent_cars_app";
-        String user="root";
-        String password="";
+    public Connection getConnection(String connectionName) {
 
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+        switch (connectionName)
+        {
+            case "localhost":
+                String dbName="rent_cars_app";
+                String user="root";
+                String password="";
 
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/" + dbName+"?serverTimezone=UTC", user , password);
+                try {
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+
+                    conn = DriverManager.getConnection("jdbc:mysql://localhost/" + dbName+"?serverTimezone=UTC", user , password);
+                    statement = conn.createStatement();
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
+                break;
+            default:
+                System.out.println("brak polaczenia");
+                break;
         }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-
 
         return conn;
+    }
+
+    public static ResultSet getData(String query)
+    {
+        try
+        {
+            response = statement.executeQuery(query);
+            System.out.println("records from database");
+
+        } catch (Exception ex)
+        {
+            System.out.println(ex);
+        }
+        return response;
     }
 }

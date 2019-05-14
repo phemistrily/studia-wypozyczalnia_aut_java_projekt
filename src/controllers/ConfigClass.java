@@ -9,7 +9,7 @@ public class ConfigClass {
         switch (connectionName) {
             case "localhost":
                 SqlConnector sqlConnector = new SqlConnector();
-                Connection conn = sqlConnector.getConnection();
+                Connection conn = sqlConnector.getConnection(connectionName);
                 break;
             default:
 
