@@ -5,16 +5,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
-import javafx.stage.Window;
-
-import javax.swing.event.TreeModelEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -41,10 +36,15 @@ public class DashboardController implements Initializable
         Boolean isLogged = user.loginUser(login, password);
         if (isLogged)
         {
-            GridPane pane = FXMLLoader.load(getClass().getResource("../fxmlData/loggedIn.fxml"));
-            primaryStage.getChildren().setAll(pane);
+            LoggedInController loggedInController = new LoggedInController();
+            loggedInController.initData(login);
+            this.getLoggedInPanel();
+
         }
+    }
 
-
+    private void getLoggedInPanel() throws IOException {
+        GridPane pane = FXMLLoader.load(getClass().getResource("../fxmlData/loggedIn.fxml"));
+        primaryStage.getChildren().setAll(pane);
     }
 }
