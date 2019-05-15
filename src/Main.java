@@ -9,23 +9,26 @@ import javafx.stage.Stage;
 import controllers.ConfigClass;
 import javafx.scene.control.Button;
 
+import javax.swing.event.TreeModelEvent;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Main extends Application implements EventHandler<ActionEvent> {
-
     private Button loginBtn;
     public ConfigClass configClass;
+    public Stage primaryStage;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         String connectionName = "localhost";
         configClass = new ConfigClass(connectionName);
         Parent root = FXMLLoader.load(getClass().getResource("/fxmlData/main.fxml"));
+        Scene scene = new Scene(root, 1024, 800);
         primaryStage.setTitle(configClass.mainTitle);
 
-        primaryStage.setScene(new Scene(root, 1024, 800));
+        primaryStage.setScene(scene);
         primaryStage.show();
+        this.primaryStage = primaryStage;
     }
 
     @Override

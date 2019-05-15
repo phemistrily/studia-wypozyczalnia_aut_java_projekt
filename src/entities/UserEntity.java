@@ -3,6 +3,7 @@ package entities;
 import controllers.SqlConnector;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 
@@ -14,8 +15,6 @@ import java.util.ArrayList;
 public class UserEntity {
 
     SqlConnector sqlConnector;
-    @FXML
-    private AnchorPane rootPane;
 
     public UserEntity() {
         sqlConnector = new SqlConnector();
@@ -35,7 +34,6 @@ public class UserEntity {
 //            statement.executeUpdate(sql);
 //    }
     }
-
     public void loginUser(String login, String password) throws SQLException, IOException {
 
         System.out.println(login);
@@ -57,8 +55,7 @@ public class UserEntity {
         }
         else
         {
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("fxmlData/loggedIn.fxml"));
-            rootPane.getChildren().setAll(pane);
+
         }
 
 
