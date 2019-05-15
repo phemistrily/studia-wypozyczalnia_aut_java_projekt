@@ -3,14 +3,13 @@ package entities;
 import controllers.SqlConnector;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Alert;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 public class UserEntity {
 
@@ -34,7 +33,7 @@ public class UserEntity {
 //            statement.executeUpdate(sql);
 //    }
     }
-    public void loginUser(String login, String password) throws SQLException, IOException {
+    public boolean loginUser(String login, String password) throws SQLException, IOException {
 
         System.out.println(login);
         System.out.println(password);
@@ -52,22 +51,11 @@ public class UserEntity {
             alert.setContentText("Nie poprawny login lub hasło");
 
             alert.showAndWait();
+            return false;
         }
-        else
-        {
-
+        else {
+            return true;
         }
-
-
-
-//            String connectionName = "localhost";
-////            ConfigClass configClass = new ConfigClass(connectionName);
-////
-////        try {
-////            String sql="SELECT email, password FROM users WHERE active = 1 AND email = '" + login + "' AND password = '" + password + "'";
-////            Connection conn;
-////            Statement statement=conn.createStatement();
-////            statement.executeUpdate(sql);
-////        }
     }
+
 }
