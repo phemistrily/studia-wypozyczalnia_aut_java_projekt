@@ -17,16 +17,10 @@ public class LoggedInController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
-        UserEntity user = new UserEntity();
-        System.out.println("dupa");
-        System.out.println(this.test);
-        loggedInWelcomeLabel.setText("." + this.test);
     }
 
     public void initData(String login) {
         this.test = login;
-        System.out.println("test login");
-        System.out.println(login);
-        System.out.println(this.test);
+        this.loggedInWelcomeLabel.setText("Witaj " + this.test);
     }
 }
