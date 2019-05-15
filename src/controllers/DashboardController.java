@@ -25,7 +25,7 @@ public class DashboardController implements Initializable
     public TextField loginLabel;
     public PasswordField passwordField;
     @FXML
-    private GridPane rootPane;
+    private GridPane primaryStage;
     private Stage loggedInStage;
     @FXML
     private Button loginAction;
@@ -39,11 +39,17 @@ public class DashboardController implements Initializable
         String password = passwordField.getText();
         UserEntity user = new UserEntity();
         user.loginUser(login, password);
-        Stage stage = (Stage) loginAction.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("../fxmlData/loggedIn.fxml"));
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+
+        GridPane pane = FXMLLoader.load(getClass().getResource("../fxmlData/loggedIn.fxml"));
+        primaryStage.getChildren().setAll(pane);
+
+        //Stage stage = (Stage) loginAction.getScene().getWindow();
+
+//        Parent root = FXMLLoader.load(getClass().getResource("/fxmlData/loggedIn.fxml"));
+//        Scene scene = new Scene(root);
+//        stage.setScene(scene);
+//        stage.show();
+
 //        Scene scene = actionEvent.getSource().getScene();
 //        Window window = scene.getWindow();
 //        Stage stage = (Stage) window;

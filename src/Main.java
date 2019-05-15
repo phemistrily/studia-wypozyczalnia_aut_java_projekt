@@ -16,7 +16,7 @@ import java.sql.Statement;
 public class Main extends Application implements EventHandler<ActionEvent> {
     private Button loginBtn;
     public ConfigClass configClass;
-    public Stage primaryStage;
+    public static Stage primaryStage;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -30,6 +30,13 @@ public class Main extends Application implements EventHandler<ActionEvent> {
         primaryStage.show();
         this.primaryStage = primaryStage;
     }
+
+//    public Stage getPrimaryStage() {
+//        if(primaryStage == null) {
+//            //
+//        }
+//        return primaryStage;
+//    }
 
     @Override
     public void handle(ActionEvent event)
