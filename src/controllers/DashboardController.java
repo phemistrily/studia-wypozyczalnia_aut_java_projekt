@@ -72,6 +72,16 @@ public class DashboardController implements Initializable
          */
         primaryStage.getChildren().setAll(pane);
     }
+    @FXML
+    void showCarView(ActionEvent event)throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../fxmlData/carView.fxml"));
+        AnchorPane pane = loader.load();
+        /**
+         * Set scene and pass data through the scenes
+         */
+        primaryStage.getChildren().setAll(pane);
+    }
 
 //    private void getLoggedInPanel() throws IOException {
 //        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxmlData/loggedIn.fxml"));

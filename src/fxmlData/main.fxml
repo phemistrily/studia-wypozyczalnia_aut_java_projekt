@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane fx:id="primaryStage" maxHeight="768.0" maxWidth="1024.0" minHeight="768.0" minWidth="1024.0" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DashboardController">
    <children>
       <Button fx:id="loginBtn" layoutX="127.0" layoutY="517.0" minHeight="23.0" minWidth="324.0" mnemonicParsing="false" onAction="#loginAction" prefHeight="23.0" prefWidth="324.0" text="Zaloguj się do systemu">
@@ -43,7 +42,7 @@
             <Font name="Verdana" size="12.0" />
          </font>
       </Button>
-      <Button id="catalogBtn" layoutX="600.0" layoutY="516.0" minHeight="25.0" minWidth="311.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="324.0" text="Przejrzyj katalog aut">
+      <Button id="catalogBtn" layoutX="600.0" layoutY="516.0" minHeight="25.0" minWidth="311.0" mnemonicParsing="false" onAction="#showCarView" prefHeight="25.0" prefWidth="324.0" text="Przejrzyj katalog aut">
          <font>
             <Font name="Verdana" size="12.0" />
          </font>
