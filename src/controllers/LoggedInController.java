@@ -18,7 +18,7 @@ import java.util.ResourceBundle;
 
 public class LoggedInController implements Initializable {
 
-    private String test;
+    private String loginData;
     @FXML
     private GridPane loggedInPanel;
     @FXML
@@ -31,8 +31,8 @@ public class LoggedInController implements Initializable {
     }
 
     public void initData(String login) {
-        this.test = login;
-        this.loggedInWelcomeLabel.setText("Witaj " + this.test);
+        this.loginData = login;
+        this.loggedInWelcomeLabel.setText("Witaj " + this.loginData);
     }
 
     public void logoutAction(javafx.event.ActionEvent actionEvent) throws IOException {
@@ -42,6 +42,8 @@ public class LoggedInController implements Initializable {
         /**
          * Set scene and pass data through the scenes
          */
+        System.out.println(loginData);
+        loginData = null;
         loggedInPanel.getChildren().setAll(pane);
     }
 }

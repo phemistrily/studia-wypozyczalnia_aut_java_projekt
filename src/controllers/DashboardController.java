@@ -63,6 +63,16 @@ public class DashboardController implements Initializable
         }
     }
 
+    public void getRegisterForm(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../fxmlData/registerForm.fxml"));
+        GridPane pane = loader.load();
+        /**
+         * Set scene and pass data through the scenes
+         */
+        primaryStage.getChildren().setAll(pane);
+    }
+
 //    private void getLoggedInPanel() throws IOException {
 //        GridPane pane = FXMLLoader.load(getClass().getResource("../fxmlData/loggedIn.fxml"));
 //        primaryStage.getChildren().setAll(pane);
