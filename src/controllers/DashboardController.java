@@ -27,10 +27,11 @@ public class DashboardController implements Initializable
     @FXML
     private GridPane primaryStage;
     @FXML
-    private Button loginAction;
+    private Button loginBtn;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
+        //
     }
     @FXML
     private void loginAction(ActionEvent actionEvent) throws SQLException, IOException {
