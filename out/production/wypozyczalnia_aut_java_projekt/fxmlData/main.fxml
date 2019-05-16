@@ -38,7 +38,7 @@
             <Font name="Verdana" size="27.0" />
          </font>
       </Label>
-      <Button layoutX="695.0" layoutY="340.0" minHeight="25.0" minWidth="153.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="153.0" text="Zarejetstruj się !">
+      <Button fx:id="getRegisterFormBtn" layoutX="695.0" layoutY="340.0" minHeight="25.0" minWidth="153.0" mnemonicParsing="false" onAction="#getRegisterForm" prefHeight="25.0" prefWidth="153.0" text="Zarejetstruj się !">
          <font>
             <Font name="Verdana" size="12.0" />
          </font>

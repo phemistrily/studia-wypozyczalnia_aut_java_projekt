@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="768.0" maxWidth="1024.0" minHeight="768.0" minWidth="1024.0" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="registerFormPanel" maxHeight="768.0" maxWidth="1024.0" minHeight="768.0" minWidth="1024.0" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RegisterPanelController">
    <children>
       <Button fx:id="registerBtn" layoutX="80.0" layoutY="373.0" mnemonicParsing="false" onAction="#registerAction" prefHeight="23.0" prefWidth="183.0" text="Zarejestruj się do systemu">
          <font>
@@ -26,7 +25,7 @@
          </font>
       </Label>
       <TextField fx:id="loginLabel" layoutX="214.0" layoutY="214.0" />
-      <PasswordField fx:id="passwordField" layoutX="214.0" layoutY="318.0" />
+      <PasswordField fx:id="passwordFieldAgain" layoutX="214.0" layoutY="318.0" />
       <Label alignment="CENTER" contentDisplay="CENTER" layoutY="113.0" prefHeight="53.0" prefWidth="1024.0" style="-fx-background-color: #4FC3F7;" text="Zarejestruj się" textAlignment="CENTER">
          <font>
             <Font name="Verdana" size="36.0" />
@@ -37,7 +36,7 @@
             <Font name="Verdana" size="20.0" />
          </font>
       </Label>
-      <Button layoutX="646.0" layoutY="361.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="153.0" text="Zaloguj się">
+      <Button layoutX="646.0" layoutY="361.0" mnemonicParsing="false" onAction="#getWelcomePanel" prefHeight="25.0" prefWidth="153.0" text="Zaloguj się">
          <font>
             <Font name="Verdana" size="12.0" />
          </font>

@@ -25,6 +25,8 @@ public class DashboardController implements Initializable
     public PasswordField passwordField;
 
     @FXML
+    private Button getRegisterFormBtn;
+    @FXML
     private AnchorPane primaryStage;
     @FXML
     private Button loginBtn;
