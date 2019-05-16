@@ -1,69 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<GridPane fx:id="primaryStage" alignment="center" hgap="10" prefHeight="800.0" prefWidth="1024.0" style="-fx-background-color: #4FC3F7;" vgap="10" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DashboardController">
+
+<AnchorPane fx:id="primaryStage" maxHeight="768.0" maxWidth="1024.0" minHeight="768.0" minWidth="1024.0" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DashboardController">
    <children>
-      <Button fx:id="loginBtn" mnemonicParsing="false" onAction="#loginAction" prefHeight="23.0" prefWidth="324.0" text="Zaloguj się do systemu" GridPane.columnSpan="2" GridPane.rowIndex="5">
+      <Button fx:id="loginBtn" layoutX="127.0" layoutY="517.0" minHeight="23.0" minWidth="324.0" mnemonicParsing="false" onAction="#loginAction" prefHeight="23.0" prefWidth="324.0" text="Zaloguj się do systemu">
          <font>
             <Font name="Verdana" size="12.0" />
-         </font></Button>
-      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="15.0" prefWidth="192.0" text="Login (adres-email):" textAlignment="RIGHT" GridPane.rowIndex="3">
+         </font>
+      </Button>
+      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="127.0" layoutY="321.0" minHeight="15.0" minWidth="121.0" prefHeight="15.0" prefWidth="142.0" text="Login (adres-email):" textAlignment="RIGHT">
          <font>
             <Font name="Verdana" size="12.0" />
-         </font></Label>
-      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="15.0" prefWidth="173.0" text="Hasło:" textAlignment="CENTER" GridPane.rowIndex="4">
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="139.0" layoutY="357.0" maxWidth="-Infinity" minHeight="15.0" minWidth="42.0" prefHeight="15.0" prefWidth="42.0" text="Hasło:" textAlignment="CENTER">
          <font>
             <Font name="Verdana" size="12.0" />
-         </font></Label>
-      <TextField fx:id="loginLabel" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-      <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="53.0" prefWidth="789.0" style="-fx-background-color: #4FC3F7;" text="System wypożyczalni aut" textAlignment="CENTER" GridPane.columnSpan="6">
+         </font>
+      </Label>
+      <TextField fx:id="loginLabel" layoutX="278.0" layoutY="316.0" minWidth="-Infinity" />
+      <PasswordField fx:id="passwordField" layoutX="278.0" layoutY="352.0" minHeight="-Infinity" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="153.0" minHeight="53.0" minWidth="789.0" prefHeight="53.0" prefWidth="1024.0" style="-fx-background-color: #4FC3F7;" text="System wypożyczalni aut" textAlignment="CENTER">
          <font>
             <Font name="Verdana" size="36.0" />
          </font>
       </Label>
-      <Label prefHeight="15.0" prefWidth="212.0" text="Nie masz konta?" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="4">
+      <Label layoutX="667.0" layoutY="280.0" minHeight="15.0" minWidth="212.0" prefHeight="53.0" prefWidth="257.0" text="Nie masz konta?">
+         <font>
+            <Font name="Verdana" size="27.0" />
+         </font>
+      </Label>
+      <Button layoutX="695.0" layoutY="340.0" minHeight="25.0" minWidth="153.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="153.0" text="Zarejetstruj się !">
          <font>
             <Font name="Verdana" size="12.0" />
-         </font></Label>
-      <Button mnemonicParsing="false" onAction="#getRegisterForm" prefHeight="25.0" prefWidth="153.0" text="Zarejetstruj się" GridPane.columnIndex="3" GridPane.rowIndex="5">
+         </font>
+      </Button>
+      <Button id="catalogBtn" layoutX="600.0" layoutY="516.0" minHeight="25.0" minWidth="311.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="324.0" text="Przejrzyj katalog aut">
          <font>
             <Font name="Verdana" size="12.0" />
-         </font></Button>
-      <Button id="catalogBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="311.0" text="Przejrzyj katalog aut" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="2">
+         </font>
+      </Button>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="148.0" layoutY="275.0" minHeight="25.0" minWidth="219.0" prefHeight="25.0" prefWidth="219.0" text="Zaloguj się do systemu:" textAlignment="JUSTIFY">
          <font>
-            <Font name="Verdana" size="12.0" />
-         </font></Button>
-      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="313.0" text="Zaloguj się do systemu:" textAlignment="CENTER" GridPane.columnSpan="2" GridPane.rowIndex="2">
-         <font>
-            <Font name="Verdana" size="16.0" />
+            <Font name="Verdana" size="18.0" />
          </font>
       </Label>
    </children>
-   <columnConstraints>
-      <ColumnConstraints maxWidth="150.0" minWidth="0.0" prefWidth="150.0" />
-      <ColumnConstraints maxWidth="150.0" minWidth="0.0" prefWidth="150.0" />
-      <ColumnConstraints maxWidth="150.0" minWidth="0.0" prefWidth="150.0" />
-      <ColumnConstraints maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
-      <ColumnConstraints maxWidth="150.0" minWidth="0.0" prefWidth="150.0" />
-      <ColumnConstraints />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" />
-      <RowConstraints />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" />
-   </rowConstraints>
-</GridPane>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</AnchorPane>

@@ -11,7 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -25,7 +25,7 @@ public class DashboardController implements Initializable
     public PasswordField passwordField;
 
     @FXML
-    private GridPane primaryStage;
+    private AnchorPane primaryStage;
     @FXML
     private Button loginBtn;
     @Override
@@ -46,7 +46,7 @@ public class DashboardController implements Initializable
          */
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("../fxmlData/loggedIn.fxml"));
-            GridPane pane = loader.load();
+            AnchorPane pane = loader.load();
             /**
              * Set scene and pass data through the scenes
              */
@@ -66,7 +66,7 @@ public class DashboardController implements Initializable
     public void getRegisterForm(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../fxmlData/registerForm.fxml"));
-        GridPane pane = loader.load();
+        AnchorPane pane = loader.load();
         /**
          * Set scene and pass data through the scenes
          */
@@ -74,7 +74,7 @@ public class DashboardController implements Initializable
     }
 
 //    private void getLoggedInPanel() throws IOException {
-//        GridPane pane = FXMLLoader.load(getClass().getResource("../fxmlData/loggedIn.fxml"));
+//        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxmlData/loggedIn.fxml"));
 //        primaryStage.getChildren().setAll(pane);
 //    }
 }

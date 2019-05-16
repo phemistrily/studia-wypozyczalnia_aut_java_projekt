@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
@@ -20,7 +21,7 @@ public class LoggedInController implements Initializable {
 
     private String loginData;
     @FXML
-    private GridPane loggedInPanel;
+    private AnchorPane loggedInPanel;
     @FXML
     private Button loggedInLogOut;
     @FXML
@@ -38,7 +39,7 @@ public class LoggedInController implements Initializable {
     public void logoutAction(javafx.event.ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../fxmlData/main.fxml"));
-        GridPane pane = loader.load();
+        AnchorPane pane = loader.load();
         /**
          * Set scene and pass data through the scenes
          */
