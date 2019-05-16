@@ -42,24 +42,21 @@ public class DashboardController implements Initializable
         if (isLogged)
         {
             /**
-             * Set new loader
-             */
+         * Set new loader
+         */
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("../fxmlData/loggedIn.fxml"));
-            try {
-                loader.load();
-            } catch (IOException ex) {
-                System.out.println("error loading loggedIn");
-            }
+            GridPane pane = loader.load();
             /**
              * Set scene and pass data through the scenes
              */
             LoggedInController logggedInController = loader.getController();
             logggedInController.initData(login);
-            Parent p = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(p, 1024, 800));
-            stage.showAndWait();
+            primaryStage.getChildren().setAll(pane);
+//            Parent p = loader.getRoot();
+//            Stage stage = new Stage();
+//            stage.setScene(new Scene(p, 1024, 800));
+//            stage.showAndWait();
 
             //this.getLoggedInPanel();
 

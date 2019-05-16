@@ -20,6 +20,8 @@ public class LoggedInController implements Initializable {
 
     private String test;
     @FXML
+    private GridPane loggedInPanel;
+    @FXML
     private Button loggedInLogOut;
     @FXML
     private Label loggedInWelcomeLabel;
@@ -33,17 +35,13 @@ public class LoggedInController implements Initializable {
         this.loggedInWelcomeLabel.setText("Witaj " + this.test);
     }
 
-    public void logoutAction(javafx.event.ActionEvent actionEvent) {
+    public void logoutAction(javafx.event.ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../fxmlData/main.fxml"));
-        try {
-            loader.load();
-        } catch (IOException ex) {
-            System.out.println("error loading main");
-        }
-        Parent p = loader.getRoot();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(p, 1024, 800));
-        stage.showAndWait();
+        GridPane pane = loader.load();
+        /**
+         * Set scene and pass data through the scenes
+         */
+        loggedInPanel.getChildren().setAll(pane);
     }
 }
