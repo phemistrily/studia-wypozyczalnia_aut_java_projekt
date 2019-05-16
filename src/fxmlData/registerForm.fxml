@@ -24,7 +24,7 @@
             <Font name="Verdana" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="loginLabel" layoutX="214.0" layoutY="214.0" />
+      <TextField fx:id="loginLabel" layoutX="214.0" layoutY="214.0"/>
       <PasswordField fx:id="passwordFieldAgain" layoutX="214.0" layoutY="318.0" />
       <Label alignment="CENTER" contentDisplay="CENTER" layoutY="113.0" prefHeight="53.0" prefWidth="1024.0" style="-fx-background-color: #4FC3F7;" text="Zarejestruj się" textAlignment="CENTER">
          <font>

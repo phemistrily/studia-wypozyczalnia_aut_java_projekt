@@ -4,12 +4,14 @@ import controllers.SqlConnector;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Optional;
 
 public class UserEntity {
 
@@ -70,6 +72,7 @@ public class UserEntity {
 
     public Boolean registerUser(String login, String password, String repeatPassword) throws SQLException {
         this.setLogin(login);
+        this.setPassword(password);
         if(password != repeatPassword)
         {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -80,13 +83,34 @@ public class UserEntity {
             alert.showAndWait();
             return false;
         }
+        if(password != "")
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Hasło nie może być puste");
+            alert.setHeaderText("Hasło nie może być puste");
+            alert.setContentText("Hasło nie może być puste");
+
+            alert.showAndWait();
+            return false;
+        }
         String checkUserExistQuery = "SELECT email FROM users WHERE email = '" + login + "'";
         ResultSet copiedUsersEntity = sqlConnector.getData(checkUserExistQuery);
         copiedUsersEntity.last();
         int size = copiedUsersEntity.getRow();
         if(size == 0)
         {
+            String createUserQuery = "INSERT INTO users (email, password, role, active) VALUES ('" + this.login + "', '" + this.password + "',1,1)";
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Zarejestrowano");
+            alert.setHeaderText("Zarejestrowano użytkownika " + this.login);
+            alert.setContentText("Czy chcesz się zalogować?");
 
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == ButtonType.OK){
+                System.out.println("zaloguj");
+            } else {
+                System.out.println("ukryj");
+            }
             return true;
         }
         else
