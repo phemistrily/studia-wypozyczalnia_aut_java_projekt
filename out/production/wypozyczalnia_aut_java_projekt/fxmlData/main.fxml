@@ -40,7 +40,11 @@
             <Font name="Verdana" size="27.0" />
          </font>
       </Label>
+<<<<<<< HEAD
       <Button layoutX="715.0" layoutY="413.0" minHeight="25.0" minWidth="144.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="144.0" text="Zarejetstruj się !">
+=======
+      <Button fx:id="getRegisterFormBtn" layoutX="695.0" layoutY="340.0" minHeight="25.0" minWidth="153.0" mnemonicParsing="false" onAction="#getRegisterForm" prefHeight="25.0" prefWidth="153.0" text="Zarejetstruj się !">
+>>>>>>> e502886958bfdc2cf9a7e70f89df4628c7e6815f
          <font>
             <Font name="Verdana" size="12.0" />
          </font>

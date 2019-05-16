@@ -10,7 +10,11 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
+<<<<<<< HEAD
 <AnchorPane maxHeight="768.0" maxWidth="1024.0" minHeight="768.0" minWidth="1024.0" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #EF5350;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+=======
+<AnchorPane fx:id="registerFormPanel" maxHeight="768.0" maxWidth="1024.0" minHeight="768.0" minWidth="1024.0" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RegisterPanelController">
+>>>>>>> e502886958bfdc2cf9a7e70f89df4628c7e6815f
    <children>
       <Button fx:id="registerBtn" layoutX="140.0" layoutY="434.0" mnemonicParsing="false" onAction="#registerAction" prefHeight="23.0" prefWidth="183.0" text="Zarejestruj się do systemu">
          <font>
@@ -27,7 +31,13 @@
             <Font name="Verdana" size="12.0" />
          </font>
       </Label>
+<<<<<<< HEAD
       <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="78.0" layoutY="323.0" prefHeight="15.0" prefWidth="93.0" text="Powtórz hasło:" textAlignment="CENTER" textFill="#ffebee">
+=======
+      <TextField fx:id="loginLabel" layoutX="214.0" layoutY="214.0"/>
+      <PasswordField fx:id="passwordFieldAgain" layoutX="214.0" layoutY="318.0" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="113.0" prefHeight="53.0" prefWidth="1024.0" style="-fx-background-color: #4FC3F7;" text="Zarejestruj się" textAlignment="CENTER">
+>>>>>>> e502886958bfdc2cf9a7e70f89df4628c7e6815f
          <font>
             <Font name="Verdana" size="12.0" />
          </font>
@@ -37,7 +47,11 @@
             <Font name="Verdana" size="20.0" />
          </font>
       </Label>
+<<<<<<< HEAD
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="711.0" layoutY="285.0" prefHeight="25.0" prefWidth="199.0" text="Zaloguj się do systemu:" textAlignment="CENTER" textFill="#ffebee">
+=======
+      <Button layoutX="646.0" layoutY="361.0" mnemonicParsing="false" onAction="#getWelcomePanel" prefHeight="25.0" prefWidth="153.0" text="Zaloguj się">
+>>>>>>> e502886958bfdc2cf9a7e70f89df4628c7e6815f
          <font>
             <Font name="Verdana" size="16.0" />
          </font>

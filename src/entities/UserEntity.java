@@ -4,22 +4,35 @@ import controllers.SqlConnector;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Optional;
 
 public class UserEntity {
 
     SqlConnector sqlConnector;
+    private String login;
+    private String password;
 
     public UserEntity() {
         sqlConnector = new SqlConnector();
         sqlConnector.getConnection("localhost");
     }
-    public void registerUser(String login, String password) {
+
+    private void setLogin(String login) {
+        this.login = login;
+    }
+
+    private void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void registesrUser(String login, String password) {
         System.out.println(login);
         System.out.println(password);
 
@@ -35,12 +48,11 @@ public class UserEntity {
     }
     public boolean loginUser(String login, String password) throws SQLException, IOException {
 
-        System.out.println(login);
-        System.out.println(password);
-        String query = "SELECT email, password FROM users WHERE active = 1 AND email = '" + login + "' AND password = '" + password + "'";
-        System.out.println(query);
+        this.setLogin(login);
+        this.setPassword(password);
+        String query = "SELECT email, password FROM users WHERE active = 1 AND email = '" + this.login + "' AND password = '" + this.password + "'";
+        //System.out.println(query);
         ResultSet userData = sqlConnector.getData(query);
-        System.out.println(userData);
         userData.last();
         int size = userData.getRow(); //check user exist
         if (size == 0)
@@ -55,6 +67,59 @@ public class UserEntity {
         }
         else {
             return true;
+        }
+    }
+
+    public Boolean registerUser(String login, String password, String repeatPassword) throws SQLException {
+        this.setLogin(login);
+        this.setPassword(password);
+        if(password != repeatPassword)
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Hasła nie są takie same");
+            alert.setHeaderText("Hasła nie są takie same");
+            alert.setContentText("Hasła nie są takie same");
+
+            alert.showAndWait();
+            return false;
+        }
+        if(password != "")
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Hasło nie może być puste");
+            alert.setHeaderText("Hasło nie może być puste");
+            alert.setContentText("Hasło nie może być puste");
+
+            alert.showAndWait();
+            return false;
+        }
+        String checkUserExistQuery = "SELECT email FROM users WHERE email = '" + login + "'";
+        ResultSet copiedUsersEntity = sqlConnector.getData(checkUserExistQuery);
+        copiedUsersEntity.last();
+        int size = copiedUsersEntity.getRow();
+        if(size == 0)
+        {
+            String createUserQuery = "INSERT INTO users (email, password, role, active) VALUES ('" + this.login + "', '" + this.password + "',1,1)";
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Zarejestrowano");
+            alert.setHeaderText("Zarejestrowano użytkownika " + this.login);
+            alert.setContentText("Czy chcesz się zalogować?");
+
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == ButtonType.OK){
+                System.out.println("zaloguj");
+            } else {
+                System.out.println("ukryj");
+            }
+            return true;
+        }
+        else
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Nie zarejestrowano");
+            alert.setHeaderText("Użytkownik istnieje w systemie");
+            alert.setContentText("Użytkownik istnieje w systemie");
+            return false;
         }
     }
 
