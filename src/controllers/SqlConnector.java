@@ -5,10 +5,7 @@
 
 package controllers;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 public class SqlConnector {
     private Connection conn;
@@ -39,6 +36,15 @@ public class SqlConnector {
                 System.out.println("brak polaczenia");
                 break;
 
+        }
+    }
+
+    public void insertData(String query)
+    {
+        try {
+            statement.executeUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 

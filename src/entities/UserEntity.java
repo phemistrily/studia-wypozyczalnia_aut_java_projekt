@@ -73,8 +73,14 @@ public class UserEntity {
     public Boolean registerUser(String login, String password, String repeatPassword) throws SQLException {
         this.setLogin(login);
         this.setPassword(password);
-        if(password != repeatPassword)
+        System.out.println("login data:");
+        System.out.println(login);
+        System.out.println(password);
+        System.out.println(repeatPassword);
+        if(!password.equals(repeatPassword))
         {
+            System.out.println(password);
+            System.out.println(repeatPassword);
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Hasła nie są takie same");
             alert.setHeaderText("Hasła nie są takie same");
@@ -83,7 +89,7 @@ public class UserEntity {
             alert.showAndWait();
             return false;
         }
-        if(password != "")
+        if(password == "")
         {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Hasło nie może być puste");
@@ -100,6 +106,7 @@ public class UserEntity {
         if(size == 0)
         {
             String createUserQuery = "INSERT INTO users (email, password, role, active) VALUES ('" + this.login + "', '" + this.password + "',1,1)";
+            sqlConnector.insertData(createUserQuery);
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Zarejestrowano");
             alert.setHeaderText("Zarejestrowano użytkownika " + this.login);
