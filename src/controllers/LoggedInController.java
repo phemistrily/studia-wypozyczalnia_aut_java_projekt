@@ -1,6 +1,7 @@
 package controllers;
 
 import entities.UserEntity;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,7 +13,6 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -45,6 +45,17 @@ public class LoggedInController implements Initializable {
          */
         System.out.println(loginData);
         loginData = null;
+        loggedInPanel.getChildren().setAll(pane);
+    }
+
+    @FXML
+    public void getCatalogView(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../fxmlData/carView.fxml"));
+        AnchorPane pane = loader.load();
+        /**
+         * Set scene and pass data through the scenes
+         */
         loggedInPanel.getChildren().setAll(pane);
     }
 }

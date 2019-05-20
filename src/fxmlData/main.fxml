@@ -13,6 +13,21 @@
 
 <AnchorPane fx:id="primaryStage" maxHeight="768.0" maxWidth="1024.0" minHeight="768.0" minWidth="1024.0" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #EF5350;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DashboardController">
    <children>
+      <Circle fill="#ff9e80" layoutX="286.0" layoutY="356.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.15" radius="173.0" stroke="#ff9e80" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="OUTSIDE">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </Circle>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="679.0" minHeight="53.0" minWidth="789.0" prefHeight="68.0" prefWidth="1024.0" textAlignment="CENTER">
+         <font>
+            <Font name="Yu Gothic Medium" size="46.0" />
+         </font>
+      </Label>
+      <Circle fill="#ff9e80" layoutX="780.0" layoutY="359.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.15" radius="174.0" stroke="#a44242" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="OUTSIDE">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </Circle>
       <Button fx:id="loginBtn" layoutX="214.0" layoutY="412.0" minHeight="23.0" minWidth="153.0" mnemonicParsing="false" onAction="#loginAction" prefHeight="53.0" prefWidth="153.0" text="Zaloguj się do systemu">
          <font>
             <Font name="Verdana" size="12.0" />
@@ -40,7 +55,7 @@
             <Font name="Verdana" size="27.0" />
          </font>
       </Label>
-      <Button fx:id="getRegisterFormBtn" layoutX="715.0" layoutY="413.0" minHeight="25.0" minWidth="144.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="144.0" text="Zarejetstruj się !">
+      <Button fx:id="getRegisterFormBtn" layoutX="715.0" layoutY="413.0" minHeight="25.0" minWidth="144.0" mnemonicParsing="false" onAction="#getRegisterForm" prefHeight="51.0" prefWidth="144.0" text="Zarejetstruj się !">
          <font>
             <Font name="Verdana" size="12.0" />
          </font>
@@ -55,22 +70,7 @@
             <Font name="Verdana" size="18.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="679.0" minHeight="53.0" minWidth="789.0" prefHeight="68.0" prefWidth="1024.0" textAlignment="CENTER">
-         <font>
-            <Font name="Yu Gothic Medium" size="46.0" />
-         </font>
-      </Label>
       <Separator layoutX="186.0" layoutY="305.0" prefWidth="200.0" />
-      <Circle fill="#ff9e80" layoutX="286.0" layoutY="356.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.15" radius="173.0" stroke="#ff9e80" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="OUTSIDE">
-         <cursor>
-            <Cursor fx:constant="DEFAULT" />
-         </cursor>
-      </Circle>
-      <Circle fill="#ff9e80" layoutX="780.0" layoutY="359.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.15" radius="174.0" stroke="#a44242" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="OUTSIDE">
-         <cursor>
-            <Cursor fx:constant="DEFAULT" />
-         </cursor>
-      </Circle>
       <Separator layoutX="691.0" layoutY="327.0" prefWidth="200.0" />
       <Separator layoutX="181.0" layoutY="81.0" prefHeight="15.0" prefWidth="672.0" />
    </children>

@@ -22,7 +22,7 @@ public class RegisterPanelController implements Initializable {
     @FXML
     private AnchorPane registerFormPanel;
     @FXML
-    private TextField loginLabel;
+    private TextField loginField;
     @FXML
     private PasswordField passwordField;
     @FXML
@@ -34,15 +34,28 @@ public class RegisterPanelController implements Initializable {
     }
 
     @FXML
-    public void registerAction(ActionEvent actionEvent) throws SQLException {
-        String login = loginLabel.getText();
+    public void registerAction(ActionEvent actionEvent) throws SQLException, IOException {
+        String login = loginField.getText();
         String password = passwordField.getText();
         String repeatPassword = passwordFieldAgain.getText();
 
         UserEntity user = new UserEntity();
         Boolean isRegistered = user.registerUser(login,password,repeatPassword);
+        if (isRegistered)
+        {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("../fxmlData/loggedIn.fxml"));
+            AnchorPane pane = loader.load();
+            /**
+             * Set scene and pass data through the scenes
+             */
+            LoggedInController logggedInController = loader.getController();
+            logggedInController.initData(login);
+            registerFormPanel.getChildren().setAll(pane);
+        }
     }
 
+    @FXML
     public void getWelcomePanel(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../fxmlData/main.fxml"));
@@ -52,4 +65,16 @@ public class RegisterPanelController implements Initializable {
          */
         registerFormPanel.getChildren().setAll(pane);
     }
+
+    @FXML
+    public void getCatalogView(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../fxmlData/carView.fxml"));
+        AnchorPane pane = loader.load();
+        /**
+         * Set scene and pass data through the scenes
+         */
+        registerFormPanel.getChildren().setAll(pane);
+    }
+
 }

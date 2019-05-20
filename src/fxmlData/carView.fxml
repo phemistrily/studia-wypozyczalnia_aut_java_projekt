@@ -15,14 +15,14 @@
             <Font name="Constantia Bold" size="30.0" />
          </font>
       </Label>
-      <TableView layoutY="51.0" prefHeight="581.0" prefWidth="1024.0" AnchorPane.bottomAnchor="136.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="51.0">
+      <TableView fx:id="carCatalogTableView" layoutY="51.0" prefHeight="581.0" prefWidth="1024.0" AnchorPane.bottomAnchor="136.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="51.0">
         <columns>
-          <TableColumn prefWidth="41.0" text="L.p." />
-          <TableColumn prefWidth="131.0" text="Nazwa" />
-            <TableColumn prefWidth="53.0" text="Klasa" />
-            <TableColumn prefWidth="130.0" text="Marka" />
-            <TableColumn prefWidth="88.0" text="Czy wynajęty" />
-            <TableColumn prefWidth="170.0" text="Lokalizacja (miasto)" />
+          <TableColumn fx:id="lp" prefWidth="41.0" text="L.p." />
+          <TableColumn fx:id="name" prefWidth="131.0" text="Nazwa" />
+            <TableColumn fx:id="class" prefWidth="53.0" text="Klasa" />
+            <TableColumn fx:id="brand" prefWidth="130.0" text="Marka" />
+            <TableColumn fx:id="isRented" prefWidth="88.0" text="Czy wynajęty" />
+            <TableColumn fx:id="localisation" prefWidth="170.0" text="Lokalizacja (miasto)" />
         </columns>
       </TableView>
       <Button layoutX="809.0" layoutY="730.0" mnemonicParsing="false" style="-fx-background-color: #569DAB;" styleClass="buttonsApp" text="Wstecz" textFill="#f8f8f8" textOverrun="CLIP" />

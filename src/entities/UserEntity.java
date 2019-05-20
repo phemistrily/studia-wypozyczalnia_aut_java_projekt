@@ -3,9 +3,7 @@ package entities;
 import controllers.SqlConnector;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
@@ -18,6 +16,13 @@ public class UserEntity {
     SqlConnector sqlConnector;
     private String login;
     private String password;
+    @FXML
+    private TextField loginField;
+    @FXML
+    private PasswordField passwordField;
+    @FXML
+    private PasswordField passwordFieldAgain;
+
 
     public UserEntity() {
         sqlConnector = new SqlConnector();
@@ -89,7 +94,17 @@ public class UserEntity {
             alert.showAndWait();
             return false;
         }
-        if(password == "")
+        if(login.equals(""))
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Podaj nazwę użytkownika");
+            alert.setHeaderText("Podaj nazwę użytkownika");
+            alert.setContentText("Podaj nazwę użytkownika");
+
+            alert.showAndWait();
+            return false;
+        }
+        if(password.equals(""))
         {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Hasło nie może być puste");
@@ -115,10 +130,14 @@ public class UserEntity {
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == ButtonType.OK){
                 System.out.println("zaloguj");
+                return true;
             } else {
                 System.out.println("ukryj");
+                loginField.clear();
+                passwordField.clear();
+                passwordFieldAgain.clear();
+                return false;
             }
-            return true;
         }
         else
         {
