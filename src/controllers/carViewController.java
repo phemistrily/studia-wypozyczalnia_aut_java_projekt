@@ -80,4 +80,15 @@ public class carViewController implements Initializable
     }
 
 
+    public void bookCar(ActionEvent event)
+    {
+    }
+
+    public void backToMain(ActionEvent event)
+    {
+    }
+
+    public void backAction(ActionEvent event)
+    {
+    }
 }
