@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane fx:id="carView" maxHeight="768.0" maxWidth="1024.0" minHeight="768.0" minWidth="1024.0" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="carView" maxHeight="768.0" maxWidth="1024.0" minHeight="768.0" minWidth="1024.0" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.carViewController">
    <children>
       <Label layoutX="380.0" layoutY="7.0" text="Lista Samochodow" textFill="#31959a">
          <font>
@@ -19,7 +19,7 @@
         <columns>
           <TableColumn fx:id="lp" prefWidth="41.0" text="L.p." />
           <TableColumn fx:id="name" prefWidth="131.0" text="Nazwa" />
-            <TableColumn fx:id="class" prefWidth="53.0" text="Klasa" />
+            <TableColumn fx:id="carClass" prefWidth="53.0" text="Klasa" />
             <TableColumn fx:id="brand" prefWidth="130.0" text="Marka" />
             <TableColumn fx:id="isRented" prefWidth="88.0" text="Czy wynajęty" />
             <TableColumn fx:id="localisation" prefWidth="170.0" text="Lokalizacja (miasto)" />
