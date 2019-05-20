@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="registerFormPanel" maxHeight="768.0" maxWidth="1024.0" minHeight="768.0" minWidth="1024.0" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #EF5350;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RegisterPanelController">
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <Circle fill="#ff9e80" layoutX="777.0" layoutY="399.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.15" radius="207.0" stroke="#ff9e80" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="OUTSIDE">
+      <cursor>
+         <Cursor fx:constant="DEFAULT" />
+      </cursor>
+   </Circle>
+   <Circle fill="#ff9e80" layoutX="193.0" layoutY="394.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.15" radius="193.0" stroke="#ff9e80" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="OUTSIDE">
+      <cursor>
+         <Cursor fx:constant="DEFAULT" />
+      </cursor>
+   </Circle>
+   <Label alignment="CENTER" contentDisplay="CENTER" layoutY="679.0" minHeight="53.0" minWidth="789.0" prefHeight="68.0" prefWidth="1024.0" textAlignment="CENTER">
+      <font>
+         <Font name="Yu Gothic Medium" size="46.0" />
+      </font>
+   </Label>
+   <Button fx:id="bookActionBtn" layoutX="690.0" layoutY="486.0" minHeight="23.0" minWidth="153.0" mnemonicParsing="false" onAction="#bookAction" prefHeight="53.0" prefWidth="186.0" style="-fx-background-color: #ff9e80;" text="Zarezerwuj ten samochod !" textFill="WHITE">
+      <font>
+         <Font name="Verdana" size="12.0" />
+      </font>
+   </Button>
+   <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="48.0" layoutY="313.0" minHeight="15.0" minWidth="17.0" prefHeight="15.0" prefWidth="55.0" text="ID" textAlignment="RIGHT" textFill="#ffebee">
+      <font>
+         <Font name="Verdana" size="12.0" />
+      </font>
+   </Label>
+   <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="48.0" layoutY="347.0" maxWidth="-Infinity" minHeight="15.0" minWidth="41.0" prefHeight="15.0" prefWidth="55.0" text="Nazwa" textAlignment="CENTER" textFill="#ffebee">
+      <font>
+         <Font name="Verdana" size="12.0" />
+      </font>
+   </Label>
+   <PasswordField fx:id="bookDate" layoutX="769.0" layoutY="308.0" minHeight="-Infinity" />
+   <PasswordField fx:id="returnDate" layoutX="769.0" layoutY="362.0" minHeight="-Infinity" />
+   <Label alignment="CENTER" contentDisplay="CENTER" layoutY="20.0" minHeight="53.0" minWidth="789.0" prefHeight="68.0" prefWidth="1024.0" text="Zarezerwuj Samochod" textAlignment="CENTER" textFill="#ffebee">
+      <font>
+         <Font name="Yu Gothic Medium" size="46.0" />
+      </font>
+   </Label>
+   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="636.0" layoutY="253.0" minHeight="25.0" minWidth="219.0" prefHeight="25.0" prefWidth="294.0" text="Rezerwacja samochodu" textAlignment="JUSTIFY" textFill="#ffebee">
+      <font>
+         <Font name="Verdana" size="14.0" />
+      </font>
+   </Label>
+   <Separator layoutX="69.0" layoutY="277.0" prefHeight="3.0" prefWidth="249.0" />
+   <Separator layoutX="181.0" layoutY="81.0" prefHeight="15.0" prefWidth="672.0" />
+   <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="671.0" layoutY="367.0" maxWidth="-Infinity" minHeight="15.0" minWidth="42.0" prefHeight="15.0" prefWidth="75.0" text="Data zwrotu" textAlignment="CENTER" textFill="#ffebee">
+      <font>
+         <Font name="Verdana" size="12.0" />
+      </font>
+   </Label>
+   <Button id="catalogBtn" layoutX="417.0" layoutY="687.0" minHeight="25.0" minWidth="142.0" mnemonicParsing="false" onAction="#getCatalogView" prefHeight="53.0" prefWidth="200.0" style="-fx-background-color: #ff9e80;" text="Przejrzyj katalog aut" textFill="WHITE">
+      <font>
+         <Font name="Verdana" size="12.0" />
+      </font>
+   </Button>
+   <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="671.0" layoutY="422.0" maxWidth="-Infinity" minHeight="15.0" minWidth="42.0" prefHeight="15.0" prefWidth="88.0" text="Miasto zwrotu" textAlignment="CENTER" textFill="#ffebee">
+      <font>
+         <Font name="Verdana" size="12.0" />
+      </font>
+   </Label>
+   <PasswordField fx:id="returnCity" layoutX="769.0" layoutY="417.0" minHeight="-Infinity" />
+   <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="671.0" layoutY="313.0" maxWidth="-Infinity" minHeight="15.0" minWidth="42.0" prefHeight="15.0" prefWidth="88.0" text="Data wynajmu" textAlignment="CENTER" textFill="#ffebee">
+      <font>
+         <Font name="Verdana" size="12.0" />
+      </font>
+   </Label>
+   <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="48.0" layoutY="383.0" maxWidth="-Infinity" minHeight="15.0" minWidth="34.0" prefHeight="15.0" prefWidth="55.0" text="Klasa" textAlignment="CENTER" textFill="#ffebee">
+      <font>
+         <Font name="Verdana" size="12.0" />
+      </font>
+   </Label>
+   <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="48.0" layoutY="414.0" maxWidth="-Infinity" minHeight="15.0" minWidth="41.0" prefHeight="15.0" prefWidth="55.0" text="Marka" textAlignment="CENTER" textFill="#ffebee">
+      <font>
+         <Font name="Verdana" size="12.0" />
+      </font>
+   </Label>
+   <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="48.0" layoutY="450.0" maxWidth="-Infinity" minHeight="15.0" minWidth="41.0" prefHeight="15.0" prefWidth="68.0" text="Lokalizacja" textAlignment="CENTER" textFill="#ffebee">
+      <font>
+         <Font name="Verdana" size="12.0" />
+      </font>
+   </Label>
+   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="253.0" minHeight="25.0" minWidth="219.0" prefHeight="25.0" prefWidth="307.0" text="Informacje o wybranym samochodzie:" textAlignment="JUSTIFY" textFill="#ffebee">
+      <font>
+         <Font name="Verdana" size="14.0" />
+      </font>
+   </Label>
+   <Separator layoutX="718.0" layoutY="276.0" prefHeight="3.0" prefWidth="130.0" />
+   <Label fx:id="idInfo" layoutX="124.0" layoutY="312.0" prefHeight="17.0" prefWidth="249.0" text="Undefined" />
+   <Label fx:id="nameInfo" layoutX="124.0" layoutY="346.0" prefHeight="17.0" prefWidth="259.0" text="Undefined" />
+   <Label fx:id="classInfo" layoutX="124.0" layoutY="382.0" prefHeight="17.0" prefWidth="259.0" text="Undefined" />
+   <Label fx:id="brandInfo" layoutX="124.0" layoutY="413.0" prefHeight="17.0" prefWidth="266.0" text="Undefined" />
+   <Label fx:id="locationInfo" layoutX="124.0" layoutY="449.0" prefHeight="17.0" prefWidth="274.0" text="Undefined" />
+</AnchorPane>
