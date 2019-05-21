@@ -19,15 +19,15 @@ public class CarsEntity {
     public ResultSet getCars() throws SQLException, IOException {
 
         String query = "SELECT" +
-                "    c.id," +
-                "    c.name AS nazwa," +
-                "    c.class AS klasa," +
-                "    c.brand AS marka," +
-                "    c.is_rented as czy_wynajety," +
-                "    c.city_where_is_car as lokalizacja" +
-                "FROM" +
+                "    c.id as lp," +
+                "    c.name ," +
+                "    c.class AS carClass," +
+                "    c.brand," +
+                "    c.is_rented," +
+                "    c.localisation" +
+                " FROM" +
                 "    cars c";
-        //System.out.println(query);
+        System.out.println(query);
         ResultSet carsData = sqlConnector.getData(query);
         return carsData;
     }

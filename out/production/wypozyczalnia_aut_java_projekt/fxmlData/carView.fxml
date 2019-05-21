@@ -7,10 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:id="carView" maxHeight="768.0" maxWidth="1024.0" minHeight="768.0" minWidth="1024.0" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.carViewController">
+<AnchorPane fx:id="carView" maxHeight="768.0" maxWidth="1024.0" minHeight="768.0" minWidth="1024.0" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #EF5350;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.carViewController">
    <children>
-      <Label layoutX="380.0" layoutY="7.0" text="Lista Samochodow" textFill="#31959a">
+      <Label layoutX="380.0" layoutY="7.0" text="Lista Samochodow" textFill="WHITE">
          <font>
             <Font name="Constantia Bold" size="30.0" />
          </font>
@@ -25,11 +24,12 @@
             <TableColumn fx:id="localisation" prefWidth="170.0" text="Lokalizacja (miasto)" />
         </columns>
       </TableView>
-      <Button layoutX="809.0" layoutY="730.0" mnemonicParsing="false" style="-fx-background-color: #569DAB;" styleClass="buttonsApp" text="Wstecz" textFill="#f8f8f8" textOverrun="CLIP" />
-      <Button layoutX="871.0" layoutY="730.0" mnemonicParsing="false" style="-fx-background-color: #569DAB;" styleClass="buttonsApp" text="Strona głowna aplikacji" textFill="#f8f8f8">
+      <Button fx:id="backButton" layoutX="809.0" layoutY="730.0" mnemonicParsing="false" onAction="#backAction" style="-fx-background-color: #569DAB;" styleClass="buttonsApp" text="Wstecz" textFill="#f8f8f8" textOverrun="CLIP" />
+      <Button fx:id="mainButton" layoutX="871.0" layoutY="730.0" mnemonicParsing="false" onAction="#backToMain" style="-fx-background-color: #569DAB;" styleClass="buttonsApp" text="Strona głowna aplikacji" textFill="#f8f8f8">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
+      <Button fx:id="bookCarBtn" layoutX="484.0" layoutY="730.0" mnemonicParsing="false" onAction="#bookCar" style="-fx-background-color: #569DAB;" styleClass="buttonsApp" text="Zarezerwuj" textFill="#f8f8f8" textOverrun="CLIP" />
    </children>
 </AnchorPane>
