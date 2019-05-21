@@ -9,9 +9,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.TextField;
 
-import javax.swing.*;
-import javax.xml.soap.Text;
-import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;

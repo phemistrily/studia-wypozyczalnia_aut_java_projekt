@@ -55,12 +55,6 @@ public class DashboardController implements Initializable
             LoggedInController logggedInController = loader.getController();
             logggedInController.initData(login);
             primaryStage.getChildren().setAll(pane);
-//            Parent p = loader.getRoot();
-//            Stage stage = new Stage();
-//            stage.setScene(new Scene(p, 1024, 800));
-//            stage.showAndWait();
-
-            //this.getLoggedInPanel();
 
         }
     }

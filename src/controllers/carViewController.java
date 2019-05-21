@@ -45,12 +45,14 @@ public class carViewController implements Initializable
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-        //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
-
-        //add your data to the table here.
         this.initializeFactory();
-        //this.getCars();
+        try {
+            this.getCars();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         carCatalogTableView.setItems(carsTableModel);
     }
 
@@ -67,6 +69,14 @@ public class carViewController implements Initializable
     private void getCars() throws IOException, SQLException {
         CarsEntity cars = new CarsEntity();
         ResultSet carsData = cars.getCars();
+        this.putCarsToCarsTableModel(carsData);
+    }
+
+    private void putCarsToCarsTableModel(ResultSet carsData) throws SQLException {
+        while (carsData.next()){
+            carsTableModel.add(new CarsTableModel(carsData.getInt("lp"), carsData.getString("name"), carsData.getString("carClass"),
+                    carsData.getString("brand"), carsData.getString("is_rented"), carsData.getString("localisation")));
+        }
     }
 
 
