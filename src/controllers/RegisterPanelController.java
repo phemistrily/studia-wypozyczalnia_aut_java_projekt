@@ -14,7 +14,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class RegisterPanelController implements Initializable {
+public class RegisterPanelController  implements Initializable  {
 
     @FXML
     private AnchorPane registerFormPanel;

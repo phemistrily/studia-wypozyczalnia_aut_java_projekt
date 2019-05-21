@@ -3,7 +3,9 @@ package controllers;
 import entities.CarsEntity;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.cell.PropertyValueFactory;
 import models.CarsTableModel;
 import javafx.event.ActionEvent;
@@ -11,6 +13,18 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
+
+import entities.UserEntity;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -21,6 +35,7 @@ import java.util.ResourceBundle;
 public class carViewController implements Initializable
 {
 
+    public Button bookCarBtn;
     @FXML
     private AnchorPane carView;
     @FXML
@@ -95,13 +110,23 @@ public class carViewController implements Initializable
 
     public void bookCar(ActionEvent event)
     {
+
+
     }
 
-    public void backToMain(ActionEvent event)
+    public void backToMain(ActionEvent event) throws IOException
     {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../fxmlData/main.fxml"));
+        AnchorPane pane = loader.load();
+        /**
+         * Set scene and pass data through the scenes
+         */
+        carView.getChildren().setAll(pane);
     }
 
     public void backAction(ActionEvent event)
     {
+
     }
 }
