@@ -107,8 +107,10 @@ public class carViewController implements Initializable
 
     public void bookCar(ActionEvent event)
     {
-
-
+        carCatalogTableView.getSelectionModel().getSelectedIndex();
+        System.out.println(carCatalogTableView.getSelectionModel().getSelectedItem());
+        CarsTableModel car = carCatalogTableView.getSelectionModel().getSelectedItem();
+        System.out.println(car.getLp());
     }
 
     public void backToMain(ActionEvent event) throws IOException
