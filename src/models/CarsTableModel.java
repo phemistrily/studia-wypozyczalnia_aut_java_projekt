@@ -92,7 +92,4 @@ public class CarsTableModel {
     public void setLocalisation(String localisation) {
         this.localisation.set(localisation);
     }
-
-    /*
-     */
 }

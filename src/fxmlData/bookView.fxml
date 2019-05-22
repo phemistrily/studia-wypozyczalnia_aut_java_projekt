@@ -16,14 +16,14 @@
             <Font name="Constantia Bold" size="30.0" />
          </font>
       </Label>
-      <TableView fx:id="carCatalogTableView" layoutY="51.0" prefHeight="581.0" prefWidth="1024.0" AnchorPane.bottomAnchor="471.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="51.0">
+      <TableView fx:id="bookCatalogTableView" layoutY="51.0" prefHeight="581.0" prefWidth="1024.0" AnchorPane.bottomAnchor="471.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="51.0">
         <columns>
           <TableColumn fx:id="lp" prefWidth="83.0" text="ID Pojazdu" />
           <TableColumn fx:id="name" prefWidth="89.0" text="Nazwa" />
-            <TableColumn fx:id="class" prefWidth="113.0" text="Data wynajmu" />
-            <TableColumn fx:id="brand" prefWidth="137.0" text="Data zwrotu" />
-            <TableColumn fx:id="isRented" prefWidth="116.0" text="Miasto wynajmu" />
-            <TableColumn fx:id="localisation" prefWidth="129.0" text="Miasto zwrotu" />
+            <TableColumn fx:id="start_date" prefWidth="113.0" text="Data wynajmu" />
+            <TableColumn fx:id="end_date" prefWidth="137.0" text="Data zwrotu" />
+            <TableColumn fx:id="start_city" prefWidth="116.0" text="Miasto wynajmu" />
+            <TableColumn fx:id="end_city" prefWidth="129.0" text="Miasto zwrotu" />
         </columns>
       </TableView>
       <Button fx:id="backButton" layoutX="809.0" layoutY="730.0" mnemonicParsing="false" onAction="#backAction" style="-fx-background-color: #569DAB;" styleClass="buttonsApp" text="Wstecz" textFill="#f8f8f8" textOverrun="CLIP" />

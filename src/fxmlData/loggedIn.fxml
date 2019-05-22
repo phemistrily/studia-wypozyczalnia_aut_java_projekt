@@ -17,7 +17,7 @@
             <Font name="Verdana" size="12.0" />
          </font>
       </Button>
-      <Button id="catalogBtn" layoutX="102.0" layoutY="515.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="322.0" text="Sprawdź rezerwacje">
+      <Button fx:id="catalogBtn" onAction="#getBookView" layoutX="102.0" layoutY="515.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="322.0" text="Sprawdź rezerwacje">
          <font>
             <Font name="Verdana" size="12.0" />
          </font>

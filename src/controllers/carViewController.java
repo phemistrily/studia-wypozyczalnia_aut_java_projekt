@@ -53,10 +53,7 @@ public class carViewController implements Initializable
     @FXML
     private TableColumn<CarsTableModel, String> localisation;
 
-    private ObservableList<CarsTableModel> carsTableModel = FXCollections.observableArrayList(
-            new CarsTableModel(1,"Amos", "Chepchieng","test","reserved","Krakow"),
-            new CarsTableModel(2,"Keep", "Too","test","reserved","Krakow")
-    );
+    private ObservableList<CarsTableModel> carsTableModel = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

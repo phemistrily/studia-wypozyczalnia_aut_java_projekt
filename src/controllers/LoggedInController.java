@@ -58,4 +58,15 @@ public class LoggedInController implements Initializable {
          */
         loggedInPanel.getChildren().setAll(pane);
     }
+
+    @FXML
+    public void getBookView(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../fxmlData/bookView.fxml"));
+        AnchorPane pane = loader.load();
+        /**
+         * Set scene and pass data through the scenes
+         */
+        loggedInPanel.getChildren().setAll(pane);
+    }
 }
