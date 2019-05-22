@@ -6,10 +6,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import models.BookTableModel;
 import models.CarsTableModel;
 
@@ -23,6 +25,8 @@ public class bookViewController implements Initializable {
 
     @FXML
     private TableView<BookTableModel> bookCatalogTableView;
+    @FXML
+    private AnchorPane carView;
     @FXML
     private TableColumn<BookTableModel, Integer> lp;
     @FXML
@@ -76,6 +80,13 @@ public class bookViewController implements Initializable {
     public void backAction(ActionEvent actionEvent) {
     }
 
-    public void backToMain(ActionEvent actionEvent) {
+    public void backToMain(ActionEvent actionEvent) throws  IOException{
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../fxmlData/main.fxml"));
+        AnchorPane pane = loader.load();
+        /**
+         * Set scene and pass data through the scenes
+         */
+        carView.getChildren().setAll(pane);
     }
 }
