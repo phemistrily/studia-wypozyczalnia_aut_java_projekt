@@ -1,0 +1,11 @@
+1. Stworzenie panelu po udanym zamówieniu - Krystian
+2. Filtracja 2 tabelek (mo¿liwie jak najbardziej zaawansowana) carView i bookView + przycisk edytuj - Krystian
+3. Testy jednostkowe - Krystian
+4. Stworzenie rezerwacji - Patryk
+5. Stworzenie dokumentacji - Dawid
+6. Wymyœlenie dodatkowych funkcjonalnoœci
+7. Uzupe³nic tabele w bazie danych - Dawid
+8. Dodawanie nowego auta - Patryk
+9. Stworzenie panelu do dodawania auta (przerobiony panel do rezerwacji auta lewa czêœæ jako pola do wype³nienia
+10. Skopiowanie panelu do dodawania auta i stworzenie go jako edycja
+11. Oprogramowanie panelu dodawania i edycji auta - Patryk
