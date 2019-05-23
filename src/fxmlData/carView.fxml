@@ -9,14 +9,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="carView" maxHeight="768.0" maxWidth="1024.0" minHeight="768.0" minWidth="1024.0" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #EF5350;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CarViewController">
+<AnchorPane fx:id="carView" maxHeight="600.0" maxWidth="800.0" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #EF5350;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CarViewController">
    <children>
-      <Label layoutX="380.0" layoutY="7.0" text="Lista Samochodow" textFill="WHITE">
+      <Label layoutX="294.0" text="Lista Samochodow" textFill="WHITE">
          <font>
             <Font name="Constantia Bold" size="30.0" />
          </font>
       </Label>
-      <TableView fx:id="carCatalogTableView" layoutX="-4.0" layoutY="44.0" prefHeight="581.0" prefWidth="1024.0" AnchorPane.bottomAnchor="143.0" AnchorPane.leftAnchor="-4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="44.0">
+      <TableView fx:id="carCatalogTableView" layoutY="37.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="327.0" prefWidth="800.0" AnchorPane.bottomAnchor="236.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="37.0">
         <columns>
           <TableColumn fx:id="lp" prefWidth="41.0" text="L.p." />
           <TableColumn fx:id="name" prefWidth="131.0" text="Nazwa" />
@@ -26,17 +26,18 @@
             <TableColumn fx:id="localisation" prefWidth="170.0" text="Lokalizacja (miasto)" />
         </columns>
       </TableView>
-      <Button fx:id="backButton" layoutX="809.0" layoutY="730.0" mnemonicParsing="false" onAction="#backAction" style="-fx-background-color: #569DAB;" styleClass="buttonsApp" text="Wstecz" textFill="#f8f8f8" textOverrun="CLIP" />
-      <Button fx:id="mainButton" layoutX="871.0" layoutY="730.0" mnemonicParsing="false" onAction="#backToMain" style="-fx-background-color: #569DAB;" styleClass="buttonsApp" text="Strona głowna aplikacji" textFill="#f8f8f8">
+      <Button fx:id="backButton" layoutX="575.0" layoutY="561.0" mnemonicParsing="false" onAction="#backAction" style="-fx-background-color: #569DAB;" styleClass="buttonsApp" text="Wstecz" textFill="#f8f8f8" textOverrun="CLIP" />
+      <Button fx:id="mainButton" layoutX="637.0" layoutY="561.0" mnemonicParsing="false" onAction="#backToMain" style="-fx-background-color: #569DAB;" styleClass="buttonsApp" text="Strona głowna aplikacji" textFill="#f8f8f8">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="bookCarBtn" layoutX="484.0" layoutY="730.0" mnemonicParsing="false" onAction="#bookCar" style="-fx-background-color: #569DAB;" styleClass="buttonsApp" text="Zarezerwuj" textFill="#f8f8f8" textOverrun="CLIP" />
-      <TextField fx:id="localisationBTN" layoutX="93.0" layoutY="656.0" onKeyReleased="#filtrByLocalisation" />
-      <TextField fx:id="ByClassBTN" layoutX="93.0" layoutY="705.0" onKeyReleased="#filtrByClass" />
-      <Text fill="WHITE" layoutX="14.0" layoutY="669.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lokalizacji" />
-      <Text fill="WHITE" layoutX="14.0" layoutY="722.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Klasie" />
-      <Text fill="WHITE" layoutX="135.0" layoutY="645.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filtruj po:" />
+      <Button fx:id="bookCarBtn" layoutX="352.0" layoutY="561.0" mnemonicParsing="false" onAction="#bookCar" style="-fx-background-color: #569DAB;" styleClass="buttonsApp" text="Zarezerwuj" textFill="#f8f8f8" textOverrun="CLIP" />
+      <TextField fx:id="localisationBTN" layoutX="93.0" layoutY="512.0" onKeyReleased="#filtrByLocalisation" />
+      <TextField fx:id="ByClassBTN" layoutX="93.0" layoutY="561.0" onKeyReleased="#filtrByClass" />
+      <Text fill="WHITE" layoutX="14.0" layoutY="525.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lokalizacji" />
+      <Text fill="WHITE" layoutX="14.0" layoutY="578.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Klasie" />
+      <Text fill="WHITE" layoutX="135.0" layoutY="501.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filtruj po:" />
+      <Button fx:id="editButton" layoutX="437.0" layoutY="561.0" mnemonicParsing="false" onAction="#editAction" style="-fx-background-color: #569DAB;" styleClass="buttonsApp" text="Edytuj" textFill="#f8f8f8" textOverrun="CLIP" />
    </children>
 </AnchorPane>

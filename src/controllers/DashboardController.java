@@ -21,6 +21,7 @@ import java.util.ResourceBundle;
 
 public class DashboardController implements Initializable
 {
+
     public TextField loginLabel;
     public PasswordField passwordField;
 
@@ -33,8 +34,10 @@ public class DashboardController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
+
         //
     }
+
     @FXML
     private void loginAction(ActionEvent actionEvent) throws SQLException, IOException {
         String login = loginLabel.getText();

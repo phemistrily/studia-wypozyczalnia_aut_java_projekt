@@ -189,4 +189,8 @@ public class CarViewController implements Initializable
         sort.comparatorProperty().bind(carCatalogTableView.comparatorProperty());
         carCatalogTableView.setItems(sort);
     }
+
+    public void editAction(ActionEvent event)
+    {
+    }
 }

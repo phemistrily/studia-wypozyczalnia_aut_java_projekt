@@ -10,11 +10,11 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="addCarPanel" maxHeight="768.0" maxWidth="1024.0" minHeight="768.0" minWidth="1024.0" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #EF5350;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddCarController">
+<AnchorPane fx:id="addCarPanel" maxHeight="600.0" maxWidth="800.0" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #EF5350;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddCarController">
    <padding>
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
    </padding>
-   <Circle fill="#ff9e80" layoutX="777.0" layoutY="399.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.15" radius="207.0" stroke="#ff9e80" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="OUTSIDE">
+   <Circle fill="#ff9e80" layoutX="595.0" layoutY="391.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.15" radius="194.0" stroke="#ff9e80" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="OUTSIDE">
       <cursor>
          <Cursor fx:constant="DEFAULT" />
       </cursor>
@@ -39,19 +39,19 @@
          <Font name="Verdana" size="12.0" />
       </font>
    </Label>
-   <Label alignment="CENTER" contentDisplay="CENTER" layoutY="20.0" minHeight="53.0" minWidth="789.0" prefHeight="68.0" prefWidth="1024.0" text="Dodaj samochód do bazy" textAlignment="CENTER" textFill="#ffebee">
+   <Label alignment="CENTER" contentDisplay="CENTER" layoutY="21.0" minHeight="53.0" minWidth="789.0" prefHeight="68.0" prefWidth="800.0" text="Dodaj samochód do bazy" textAlignment="CENTER" textFill="#ffebee">
       <font>
          <Font name="Yu Gothic Medium" size="46.0" />
       </font>
    </Label>
-   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="636.0" layoutY="253.0" minHeight="25.0" minWidth="219.0" prefHeight="25.0" prefWidth="294.0" text="Pozostałe opcje: " textAlignment="JUSTIFY" textFill="#ffebee">
+   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="448.0" layoutY="263.0" minHeight="25.0" minWidth="219.0" prefHeight="25.0" prefWidth="294.0" text="Pozostałe opcje: " textAlignment="JUSTIFY" textFill="#ffebee">
       <font>
          <Font name="Verdana" size="14.0" />
       </font>
    </Label>
    <Separator layoutX="69.0" layoutY="277.0" prefHeight="3.0" prefWidth="249.0" />
-   <Separator layoutX="181.0" layoutY="81.0" prefHeight="15.0" prefWidth="672.0" />
-   <Button id="catalogBtn" layoutX="677.0" layoutY="302.0" minHeight="25.0" minWidth="142.0" mnemonicParsing="false" onAction="#getCatalogView" prefHeight="53.0" prefWidth="200.0" style="-fx-background-color: #ff9e80;" text="Przejrzyj katalog aut" textFill="WHITE">
+   <Separator layoutX="77.0" layoutY="82.0" prefHeight="15.0" prefWidth="672.0" />
+   <Button id="catalogBtn" layoutX="521.0" layoutY="325.0" minHeight="25.0" minWidth="142.0" mnemonicParsing="false" onAction="#getCatalogView" prefHeight="43.0" prefWidth="162.0" style="-fx-background-color: #ff9e80;" text="Przejrzyj katalog aut" textFill="WHITE">
       <font>
          <Font name="Verdana" size="12.0" />
       </font>
@@ -76,18 +76,18 @@
          <Font name="Verdana" size="14.0" />
       </font>
    </Label>
-   <Separator layoutX="718.0" layoutY="276.0" prefHeight="3.0" prefWidth="130.0" />
-   <Button id="catalogBtn" layoutX="677.0" layoutY="364.0" minHeight="25.0" minWidth="142.0" mnemonicParsing="false" onAction="#backAction" prefHeight="53.0" prefWidth="200.0" style="-fx-background-color: #ff9e80;" text="Wstecz" textFill="WHITE">
+   <Separator layoutX="530.0" layoutY="287.0" prefHeight="3.0" prefWidth="130.0" />
+   <Button id="catalogBtn" layoutX="521.0" layoutY="387.0" minHeight="25.0" minWidth="142.0" mnemonicParsing="false" onAction="#backAction" prefHeight="43.0" prefWidth="162.0" style="-fx-background-color: #ff9e80;" text="Wstecz" textFill="WHITE">
       <font>
          <Font name="Verdana" size="12.0" />
       </font>
    </Button>
-   <Button id="catalogBtn" layoutX="677.0" layoutY="427.0" minHeight="25.0" minWidth="142.0" mnemonicParsing="false" onAction="#backToMain" prefHeight="53.0" prefWidth="200.0" style="-fx-background-color: #ff9e80;" text="Strona głowna aplikacji" textFill="WHITE">
+   <Button id="catalogBtn" layoutX="521.0" layoutY="450.0" minHeight="25.0" minWidth="142.0" mnemonicParsing="false" onAction="#backToMain" prefHeight="43.0" prefWidth="162.0" style="-fx-background-color: #ff9e80;" text="Strona głowna aplikacji" textFill="WHITE">
       <font>
          <Font name="Verdana" size="12.0" />
       </font>
    </Button>
-   <Button id="catalogBtn" layoutX="93.0" layoutY="491.0" minHeight="25.0" minWidth="142.0" mnemonicParsing="false" onAction="#addCarToDb" prefHeight="53.0" prefWidth="200.0" style="-fx-background-color: #ff9e80;" text="Dodaj samochód" textFill="WHITE">
+   <Button id="catalogBtn" layoutX="112.0" layoutY="504.0" minHeight="25.0" minWidth="142.0" mnemonicParsing="false" onAction="#addCarToDb" prefHeight="43.0" prefWidth="162.0" style="-fx-background-color: #ff9e80;" text="Dodaj samochód" textFill="WHITE">
       <font>
          <Font name="Verdana" size="12.0" />
       </font>

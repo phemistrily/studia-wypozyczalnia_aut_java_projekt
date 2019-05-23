@@ -23,7 +23,7 @@ public class Main extends Application implements EventHandler<ActionEvent> {
         String connectionName = "localhost";
         configClass = new ConfigClass(connectionName);
         Parent root = FXMLLoader.load(getClass().getResource("/fxmlData/main.fxml"));
-        Scene scene = new Scene(root, 1024, 800);
+        Scene scene = new Scene(root, 800, 600);
         primaryStage.setTitle(configClass.mainTitle);
 
         primaryStage.setScene(scene);
@@ -51,6 +51,7 @@ public class Main extends Application implements EventHandler<ActionEvent> {
     public static void main(String[] args) throws SQLException {
         launch(args);
         System.out.println("program closed");
+
 //przykładowy sql
 //        String sql="INSERT INTO users (email, password, active) VALUES ('test','test',1)";
 //        Statement statement=conn.createStatement();
