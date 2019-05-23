@@ -22,3 +22,14 @@
 hs_err_pid*
 
 .idea/workspace.xml
+*.iml
+*.ipr
+*.iws
+out/production/NaszProjektWypozyczalniSamochodow/fxmlData/registerForm.fxml
+out/production/NaszProjektWypozyczalniSamochodow/fxmlData/passReservation.fxml
+out/production/NaszProjektWypozyczalniSamochodow/fxmlData/main.fxml
+out/production/NaszProjektWypozyczalniSamochodow/fxmlData/loggedIn.fxml
+out/production/NaszProjektWypozyczalniSamochodow/fxmlData/carView.fxml
+out/production/NaszProjektWypozyczalniSamochodow/fxmlData/bookView.fxml
+out/production/NaszProjektWypozyczalniSamochodow/fxmlData/bookCar.fxml
+out/production/NaszProjektWypozyczalniSamochodow/fxmlData/addCar.fxml
