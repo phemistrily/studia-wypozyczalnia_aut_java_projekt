@@ -11,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import models.BookTableModel;
 import models.CarsTableModel;
@@ -88,5 +89,20 @@ public class BookViewController implements Initializable {
          * Set scene and pass data through the scenes
          */
         carView.getChildren().setAll(pane);
+    }
+
+    public void filterByDataFrom(KeyEvent keyEvent) {
+    }
+
+    public void filterByDataUntil(KeyEvent keyEvent) {
+    }
+
+    public void editAction(ActionEvent actionEvent) {
+    }
+
+    public void filterByLocalisation(KeyEvent keyEvent) {
+    }
+
+    public void filterByClass(KeyEvent keyEvent) {
     }
 }
