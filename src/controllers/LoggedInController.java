@@ -17,7 +17,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class LoggedInController implements Initializable {
+public class LoggedInController implements Initializable
+{
 
     private String loginData;
     @FXML
@@ -26,17 +27,20 @@ public class LoggedInController implements Initializable {
     private Button loggedInLogOut;
     @FXML
     private Label loggedInWelcomeLabel;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
     }
 
-    public void initData(String login) {
+    public void initData(String login)
+    {
         this.loginData = login;
         this.loggedInWelcomeLabel.setText("Witaj " + this.loginData);
     }
 
-    public void logoutAction(javafx.event.ActionEvent actionEvent) throws IOException {
+    public void logoutAction(javafx.event.ActionEvent actionEvent) throws IOException
+    {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../fxmlData/main.fxml"));
         AnchorPane pane = loader.load();
@@ -49,7 +53,8 @@ public class LoggedInController implements Initializable {
     }
 
     @FXML
-    public void getCatalogView(ActionEvent actionEvent) throws IOException {
+    public void getCatalogView(ActionEvent actionEvent) throws IOException
+    {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../fxmlData/carView.fxml"));
         AnchorPane pane = loader.load();
@@ -60,7 +65,8 @@ public class LoggedInController implements Initializable {
     }
 
     @FXML
-    public void getBookView(ActionEvent actionEvent) throws IOException {
+    public void getBookView(ActionEvent actionEvent) throws IOException
+    {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../fxmlData/bookView.fxml"));
         AnchorPane pane = loader.load();

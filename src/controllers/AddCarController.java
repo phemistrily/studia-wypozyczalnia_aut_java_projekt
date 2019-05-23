@@ -59,4 +59,7 @@ public class AddCarController  {
 
     }
 
+    public void editCarInDb(ActionEvent event)
+    {
+    }
 }
