@@ -91,11 +91,11 @@ public class BookViewController implements Initializable {
         carView.getChildren().setAll(pane);
     }
 
-    public void filtrByDataFrom(KeyEvent keyEvent)
+    public void filterByDataFrom(KeyEvent keyEvent)
     {
     }
 
-    public void filtrByDataUntil(KeyEvent keyEvent)
+    public void filterByDataUntil(KeyEvent keyEvent)
     {
     }
 
@@ -103,11 +103,11 @@ public class BookViewController implements Initializable {
     {
     }
 
-    public void filtrByLocalisation(KeyEvent keyEvent)
+    public void filterByLocalisation(KeyEvent keyEvent)
     {
     }
 
-    public void filtrByClass(KeyEvent keyEvent)
+    public void filterByClass(KeyEvent keyEvent)
     {
     }
 }
