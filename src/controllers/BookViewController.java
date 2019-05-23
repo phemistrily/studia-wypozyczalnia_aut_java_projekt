@@ -21,7 +21,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class bookViewController implements Initializable {
+public class BookViewController implements Initializable {
 
     @FXML
     private TableView<BookTableModel> bookCatalogTableView;

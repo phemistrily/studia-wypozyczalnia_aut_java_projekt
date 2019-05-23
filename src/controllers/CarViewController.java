@@ -34,7 +34,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.function.Predicate;
 
-public class carViewController implements Initializable
+public class CarViewController implements Initializable
 {
 
     @FXML
@@ -123,12 +123,16 @@ public class carViewController implements Initializable
     }
 
 
-    public void bookCar(ActionEvent event)
-    {
-        carCatalogTableView.getSelectionModel().getSelectedIndex();
-        System.out.println(carCatalogTableView.getSelectionModel().getSelectedItem());
+    public void bookCar(ActionEvent event) throws IOException {
         CarsTableModel car = carCatalogTableView.getSelectionModel().getSelectedItem();
         System.out.println(car.getLp());
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../fxmlData/bookCar.fxml"));
+        AnchorPane pane = loader.load();
+        /**
+         * Set scene and pass data through the scenes
+         */
+        carView.getChildren().setAll(pane);
     }
 
     public void backToMain(ActionEvent event) throws IOException
