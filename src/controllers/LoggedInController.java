@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import models.UserSession;
 
 import java.awt.*;
 import java.io.IOException;
@@ -21,6 +22,7 @@ public class LoggedInController implements Initializable
 {
 
     private String loginData;
+
     @FXML
     private AnchorPane loggedInPanel;
     @FXML
@@ -50,6 +52,7 @@ public class LoggedInController implements Initializable
         System.out.println(loginData);
         loginData = null;
         loggedInPanel.getChildren().setAll(pane);
+        UserSession.getInstace("").cleanUserSession();
     }
 
     @FXML

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -11,70 +10,62 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="primaryStage" maxHeight="768.0" maxWidth="1024.0" minHeight="768.0" minWidth="1024.0" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #EF5350;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DashboardController">
+<AnchorPane fx:id="primaryStage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #EF5350;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DashboardController">
    <children>
-      <Circle fill="#ff9e80" layoutX="286.0" layoutY="356.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.15" radius="173.0" stroke="#ff9e80" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="OUTSIDE">
+      <Circle fill="#ff9e80" layoutX="188.0" layoutY="341.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.15" radius="173.0" stroke="#ff9e80" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="OUTSIDE">
          <cursor>
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </Circle>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="679.0" minHeight="53.0" minWidth="789.0" prefHeight="68.0" prefWidth="1024.0" textAlignment="CENTER">
-         <font>
-            <Font name="Yu Gothic Medium" size="46.0" />
-         </font>
-      </Label>
-      <Circle fill="#ff9e80" layoutX="780.0" layoutY="359.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.15" radius="174.0" stroke="#a44242" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="OUTSIDE">
+      <Circle fill="#ff9e80" layoutX="611.0" layoutY="341.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.15" radius="174.0" stroke="#a44242" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="OUTSIDE">
          <cursor>
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </Circle>
-      <Button fx:id="loginBtn" layoutX="214.0" layoutY="412.0" minHeight="23.0" minWidth="153.0" mnemonicParsing="false" onAction="#loginAction" prefHeight="53.0" prefWidth="153.0" text="Zaloguj się do systemu">
+      <Button fx:id="loginBtn" layoutX="102.0" layoutY="397.0" minHeight="23.0" minWidth="153.0" mnemonicParsing="false" onAction="#loginAction" prefHeight="53.0" prefWidth="153.0" text="Zaloguj się do systemu">
          <font>
             <Font name="Verdana" size="12.0" />
          </font>
       </Button>
-      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="127.0" layoutY="321.0" minHeight="15.0" minWidth="121.0" prefHeight="15.0" prefWidth="142.0" text="Login (adres-email):" textAlignment="RIGHT" textFill="#ffebee">
+      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="15.0" layoutY="306.0" minHeight="15.0" minWidth="121.0" prefHeight="15.0" prefWidth="142.0" text="Login (adres-email):" textAlignment="RIGHT" textFill="#ffebee">
          <font>
             <Font name="Verdana" size="12.0" />
          </font>
       </Label>
-      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="139.0" layoutY="357.0" maxWidth="-Infinity" minHeight="15.0" minWidth="42.0" prefHeight="15.0" prefWidth="42.0" text="Hasło:" textAlignment="CENTER" textFill="#ffebee">
+      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="27.0" layoutY="342.0" maxWidth="-Infinity" minHeight="15.0" minWidth="42.0" prefHeight="15.0" prefWidth="42.0" text="Hasło:" textAlignment="CENTER" textFill="#ffebee">
          <font>
             <Font name="Verdana" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="loginLabel" layoutX="278.0" layoutY="316.0" minWidth="-Infinity" />
-      <PasswordField fx:id="passwordField" layoutX="278.0" layoutY="352.0" minHeight="-Infinity" />
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="20.0" minHeight="53.0" minWidth="789.0" prefHeight="68.0" prefWidth="1024.0" text="System wypożyczalni samochodów" textAlignment="CENTER" textFill="#ffebee">
+      <TextField fx:id="loginLabel" layoutX="166.0" layoutY="301.0" minWidth="-Infinity" />
+      <PasswordField fx:id="passwordField" layoutX="166.0" layoutY="337.0" minHeight="-Infinity" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="14.0" minHeight="53.0" minWidth="789.0" prefHeight="68.0" prefWidth="800.0" text="System wypożyczalni samochodów" textAlignment="CENTER" textFill="#ffebee">
          <font>
             <Font name="Yu Gothic Medium" size="46.0" />
          </font>
       </Label>
-      <Label layoutX="667.0" layoutY="280.0" minHeight="15.0" minWidth="212.0" prefHeight="53.0" prefWidth="257.0" text="Nie masz konta?" textFill="#ffebee">
+      <Label layoutX="497.0" layoutY="240.0" minHeight="15.0" minWidth="212.0" prefHeight="53.0" prefWidth="257.0" text="Nie masz konta?" textFill="#ffebee">
          <font>
             <Font name="Verdana" size="27.0" />
          </font>
       </Label>
-      <Button fx:id="getRegisterFormBtn" layoutX="715.0" layoutY="413.0" minHeight="25.0" minWidth="144.0" mnemonicParsing="false" onAction="#getRegisterForm" prefHeight="51.0" prefWidth="144.0" text="Zarejetstruj się !">
+      <Button fx:id="getRegisterFormBtn" layoutX="553.0" layoutY="398.0" minHeight="25.0" minWidth="144.0" mnemonicParsing="false" onAction="#getRegisterForm" prefHeight="51.0" prefWidth="144.0" text="Zarejestruj się !">
          <font>
             <Font name="Verdana" size="12.0" />
          </font>
       </Button>
-      <Button id="catalogBtn" layoutX="404.0" layoutY="649.0" minHeight="25.0" minWidth="142.0" mnemonicParsing="false" onAction="#showCarView" prefHeight="78.0" prefWidth="234.0" style="-fx-background-color: #FFEBEE;" text="Przejrzyj katalog aut">
+      <Button id="catalogBtn" layoutX="300.0" layoutY="508.0" minHeight="25.0" minWidth="142.0" mnemonicParsing="false" onAction="#showCarView" prefHeight="78.0" prefWidth="234.0" style="-fx-background-color: #FFEBEE;" text="Przejrzyj katalog aut">
          <font>
             <Font name="Verdana" size="12.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="174.0" layoutY="269.0" minHeight="25.0" minWidth="219.0" prefHeight="25.0" prefWidth="219.0" text="Zaloguj się do systemu:" textAlignment="JUSTIFY" textFill="#ffebee">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="62.0" layoutY="254.0" minHeight="25.0" minWidth="219.0" prefHeight="25.0" prefWidth="219.0" text="Zaloguj się do systemu:" textAlignment="JUSTIFY" textFill="#ffebee">
          <font>
             <Font name="Verdana" size="18.0" />
          </font>
       </Label>
-      <Separator layoutX="186.0" layoutY="305.0" prefWidth="200.0" />
-      <Separator layoutX="691.0" layoutY="327.0" prefWidth="200.0" />
-      <Separator layoutX="181.0" layoutY="81.0" prefHeight="15.0" prefWidth="672.0" />
+      <Separator layoutX="74.0" layoutY="290.0" prefWidth="200.0" />
+      <Separator layoutX="521.0" layoutY="287.0" prefWidth="200.0" />
+      <Separator layoutX="63.0" layoutY="75.0" prefHeight="15.0" prefWidth="672.0" />
    </children>
-   <padding>
-      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-   </padding>
 </AnchorPane>

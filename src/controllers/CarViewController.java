@@ -25,6 +25,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import models.UserSession;
 
 import javax.xml.soap.Text;
 import java.io.IOException;
@@ -124,15 +125,29 @@ public class CarViewController implements Initializable
 
 
     public void bookCar(ActionEvent event) throws IOException {
-        CarsTableModel car = carCatalogTableView.getSelectionModel().getSelectedItem();
-        System.out.println(car.getLp());
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../fxmlData/bookCar.fxml"));
-        AnchorPane pane = loader.load();
-        /**
-         * Set scene and pass data through the scenes
-         */
-        carView.getChildren().setAll(pane);
+        if(UserSession.getInstace("").getUserId().equals("") || UserSession.getInstace("").getUserId().equals(null))
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Aby zamówić auto musisz się zalogować");
+            alert.setHeaderText("Aby zamówić auto musisz się zalogować");
+            alert.setContentText("Aby zamówić auto musisz się zalogować");
+
+            alert.showAndWait();
+        }
+        else
+        {
+            CarsTableModel car = carCatalogTableView.getSelectionModel().getSelectedItem();
+            System.out.println(car.getLp());
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("../fxmlData/bookCar.fxml"));
+            AnchorPane pane = loader.load();
+            BookCarController bookCarController = loader.getController();
+            bookCarController.initCar(car.getLp());
+            /**
+             * Set scene and pass data through the scenes
+             */
+            carView.getChildren().setAll(pane);
+        }
     }
 
     public void backToMain(ActionEvent event) throws IOException
@@ -190,7 +205,29 @@ public class CarViewController implements Initializable
         carCatalogTableView.setItems(sort);
     }
 
-    public void editAction(ActionEvent event)
-    {
+    public void editAction(ActionEvent event) throws IOException {
+        if(UserSession.getInstace("").getUserId().equals("") || UserSession.getInstace("").getUserId().equals(null))
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Aby edytować auto musisz być administratorem");
+            alert.setHeaderText("Aby edytować auto musisz być administratorem");
+            alert.setContentText("Aby edytować auto musisz być administratorem");
+
+            alert.showAndWait();
+        }
+        else
+        {
+            CarsTableModel car = carCatalogTableView.getSelectionModel().getSelectedItem();
+            System.out.println(car.getLp());
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("../fxmlData/editCar.fxml"));
+            AnchorPane pane = loader.load();
+            EditCarController editCarController = loader.getController();
+            editCarController.initCar(car.getLp());
+            /**
+             * Set scene and pass data through the scenes
+             */
+            carView.getChildren().setAll(pane);
+        }
     }
 }

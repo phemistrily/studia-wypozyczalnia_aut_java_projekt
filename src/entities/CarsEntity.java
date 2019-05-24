@@ -32,27 +32,18 @@ public class CarsEntity {
         return carsData;
     }
 
-    public ResultSet getCar(String carId) {
-        if (!carId.equals(""))
-        {
-            String query = "SELECT" +
-                    "    c.id as lp," +
-                    "    c.name ," +
-                    "    c.class AS carClass," +
-                    "    c.brand," +
-                    "    c.is_rented," +
-                    "    c.localisation" +
-                    " FROM" +
-                    "    cars c WHERE c.id = " + carId;
-            System.out.println(query);
-            ResultSet carData = sqlConnector.getData(query);
-            return carData;
-        }
-        else
-        {
-            System.out.println("no carId");
-            return null;
-        }
+    public ResultSet getCar(Integer carId) {
+        String query = "SELECT" +
+                "    c.id as lp," +
+                "    c.name ," +
+                "    c.class AS carClass," +
+                "    c.brand," +
+                "    c.localisation" +
+                " FROM" +
+                "    cars c WHERE c.id = " + carId;
+        System.out.println(query);
+        ResultSet carData = sqlConnector.getData(query);
+        return carData;
 
     }
 }

@@ -2,9 +2,7 @@ package entities;
 
 import controllers.SqlConnector;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
-import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
 import java.sql.ResultSet;
@@ -16,6 +14,7 @@ public class UserEntity {
     SqlConnector sqlConnector;
     private String login;
     private String password;
+    private String id;
     @FXML
     private TextField loginField;
     @FXML
@@ -27,6 +26,22 @@ public class UserEntity {
     public UserEntity() {
         sqlConnector = new SqlConnector();
         sqlConnector.getConnection("localhost");
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
     private void setLogin(String login) {
@@ -55,7 +70,7 @@ public class UserEntity {
 
         this.setLogin(login);
         this.setPassword(password);
-        String query = "SELECT email, password FROM users WHERE active = 1 AND email = '" + this.login + "' AND password = '" + this.password + "'";
+        String query = "SELECT id, email, password FROM users WHERE active = 1 AND email = '" + this.login + "' AND password = '" + this.password + "'";
         //System.out.println(query);
         ResultSet userData = sqlConnector.getData(query);
         userData.last();
@@ -71,6 +86,9 @@ public class UserEntity {
             return false;
         }
         else {
+            this.id = userData.getString("id");
+            System.out.println("Identyfikator");
+            System.out.println(this.id);
             return true;
         }
     }
