@@ -3,10 +3,13 @@ package controllers;
 import entities.CarsEntity;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import models.UserSession;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Array;
 import java.sql.ResultSet;
@@ -17,6 +20,8 @@ import java.util.prefs.Preferences;
 public class BookCarController implements Initializable {
 
     private Integer carId;
+    @FXML
+    private AnchorPane registerFormPanel;
     @FXML
     private Label idInfo;
     @FXML
@@ -51,7 +56,14 @@ public class BookCarController implements Initializable {
     public void bookAction(ActionEvent actionEvent) {
     }
 
-    public void getCatalogView(ActionEvent actionEvent) {
+    public void getCatalogView(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../fxmlData/carView.fxml"));
+        AnchorPane pane = loader.load();
+        /**
+         * Set scene and pass data through the scenes
+         */
+        registerFormPanel.getChildren().setAll(pane);
     }
 
     public void initCar(int lp) {

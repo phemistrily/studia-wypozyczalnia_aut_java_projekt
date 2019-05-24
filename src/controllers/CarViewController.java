@@ -136,17 +136,28 @@ public class CarViewController implements Initializable
         }
         else
         {
-            CarsTableModel car = carCatalogTableView.getSelectionModel().getSelectedItem();
-            System.out.println(car.getLp());
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("../fxmlData/bookCar.fxml"));
-            AnchorPane pane = loader.load();
-            BookCarController bookCarController = loader.getController();
-            bookCarController.initCar(car.getLp());
-            /**
-             * Set scene and pass data through the scenes
-             */
-            carView.getChildren().setAll(pane);
+            CarsTableModel car = carCatalogTableView.getSelectionModel().getSelectedItem();//check if not selected
+            Integer id = car.getLp();
+            if(id == null)
+            {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Wybierz auto");
+                alert.setHeaderText("Wybierz auto");
+                alert.setContentText("Wybierz auto");
+
+                alert.showAndWait();
+            }
+            else {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("../fxmlData/bookCar.fxml"));
+                AnchorPane pane = loader.load();
+                BookCarController bookCarController = loader.getController();
+                bookCarController.initCar(id);
+                /**
+                 * Set scene and pass data through the scenes
+                 */
+                carView.getChildren().setAll(pane);
+            }
         }
     }
 
