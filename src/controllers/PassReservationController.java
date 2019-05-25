@@ -3,17 +3,20 @@ package controllers;
 import entities.CarsEntity;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-public class PassReservationController implements Initializable {
+public class PassReservationController implements Initializable
+{
 
     @FXML
     private AnchorPane passReservationPanel;
@@ -35,11 +38,13 @@ public class PassReservationController implements Initializable {
     private Integer carId;
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources)
+    {
 
     }
 
-    public void initData(LocalDate returnDateValue, LocalDate bookDateValue, Integer carIds) throws SQLException {
+    public void initData(LocalDate returnDateValue, LocalDate bookDateValue, Integer carIds) throws SQLException
+    {
         this.returnDateValue = returnDateValue;
         this.bookDateValue = bookDateValue;
         this.carId = carIds;
@@ -57,10 +62,19 @@ public class PassReservationController implements Initializable {
     }
 
     @FXML
-    void backToMain(ActionEvent event) {
-
+    void backToMain(ActionEvent event)throws IOException {
     }
 
+    @FXML
+    void goToAccount(ActionEvent event)throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../fxmlData/loggedIn.fxml"));
+        AnchorPane pane = loader.load();
+        /**
+         * Set scene and pass data through the scenes
+         */
+        passReservationPanel.getChildren().setAll(pane);
+    }
 
 
 }

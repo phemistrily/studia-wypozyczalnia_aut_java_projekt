@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="passReservationPanel" maxHeight="600.0" maxWidth="800.0" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #EF5350;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PassReservationController">
+<AnchorPane fx:id="passReservationPanel" maxHeight="600.0" maxWidth="800.0" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #EF5350;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PassReservationController">
    <padding>
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
    </padding>
@@ -53,5 +53,5 @@
          <Font name="System Bold" size="12.0" />
       </font>
    </Button>
-   <Button layoutX="488.0" layoutY="488.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="238.0" text="Wróć do swojego konta" />
+   <Button layoutX="488.0" layoutY="488.0" mnemonicParsing="false" onAction="#goToAccount" prefHeight="25.0" prefWidth="238.0" text="Wróć do swojego konta" />
 </AnchorPane>
