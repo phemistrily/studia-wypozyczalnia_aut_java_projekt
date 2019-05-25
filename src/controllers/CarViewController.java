@@ -27,7 +27,7 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import models.UserSession;
 
-import javax.xml.soap.Text;
+
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;

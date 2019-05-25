@@ -34,21 +34,37 @@ public class AddCarController  {
     @FXML
     private TextField localisationLabel;
 
+    /**
+     * funckja dodająca samochód do bazy w widocu AddCar
+     * @param event
+     */
     @FXML
     void addCarToDb(ActionEvent event) {
 
     }
 
+    /**
+     * funckjac przechodząca wstecz w widoku addCar
+     * @param event
+     */
     @FXML
     void backAction(ActionEvent event) {
 
     }
 
+    /**
+     * funkcja przechodząca do strony głównej aplikacji z widoku addCar
+     * @param event
+     */
     @FXML
     void backToMain(ActionEvent event) {
 
     }
 
+    /**
+     * funckcja przechodząca do katalogu aut z widoku AddCar
+     * @param event
+     */
     @FXML
     void getCatalogView(ActionEvent event) {
 
@@ -59,6 +75,10 @@ public class AddCarController  {
 
     }
 
+    /**
+     * funckja edytująca dane samochodu w bazie w widoku AddCar
+     * @param event
+     */
     public void editCarInDb(ActionEvent event)
     {
     }

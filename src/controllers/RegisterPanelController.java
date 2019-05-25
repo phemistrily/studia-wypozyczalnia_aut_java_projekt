@@ -30,6 +30,12 @@ public class RegisterPanelController  implements Initializable  {
         //
     }
 
+    /**
+     * funckja obsługująca rejestrację nowego użytkownika aplikacji w widoku RegisterForm
+     * @param actionEvent
+     * @throws SQLException
+     * @throws IOException
+     */
     @FXML
     public void registerAction(ActionEvent actionEvent) throws SQLException, IOException {
         String login = loginField.getText();
@@ -52,6 +58,11 @@ public class RegisterPanelController  implements Initializable  {
         }
     }
 
+    /**
+     * funckja przechodząca do strony logowania do aplikacji z widoku RegisterForm
+     * @param actionEvent
+     * @throws IOException
+     */
     @FXML
     public void getWelcomePanel(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader();
@@ -63,6 +74,11 @@ public class RegisterPanelController  implements Initializable  {
         registerFormPanel.getChildren().setAll(pane);
     }
 
+    /**
+     * funckja przechodząca do katalogu pojazdów z widoku RegisterForm
+     * @param actionEvent
+     * @throws IOException
+     */
     @FXML
     public void getCatalogView(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader();

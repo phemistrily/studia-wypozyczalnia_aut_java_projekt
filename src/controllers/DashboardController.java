@@ -70,6 +70,11 @@ public class DashboardController implements Initializable
         }
     }
 
+    /**
+     * funckja wywołująca widok formularza do rejestracji - RegisterForm
+     * @param actionEvent
+     * @throws IOException
+     */
     public void getRegisterForm(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../fxmlData/registerForm.fxml"));
@@ -79,6 +84,12 @@ public class DashboardController implements Initializable
          */
         primaryStage.getChildren().setAll(pane);
     }
+
+    /**
+     * funkcja wywołująca widok CarView
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void showCarView(ActionEvent event)throws IOException {
         FXMLLoader loader = new FXMLLoader();

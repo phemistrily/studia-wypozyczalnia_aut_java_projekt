@@ -37,12 +37,25 @@ public class EditCarController implements Initializable {
         //
     }
 
+    /**
+     * funkcja przechodząca do katalogu pojazdów z widoku EditCar
+     * @param actionEvent
+     */
     public void getCatalogView(ActionEvent actionEvent) {
     }
 
+    /**
+     * funkcja przechodząca wstecz z widoku EditCar
+     * @param actionEvent
+     */
     public void backAction(ActionEvent actionEvent) {
     }
 
+    /**
+     * funkcja przechodząca do strony głównej aplikacji z widoku EditCar
+     * @param actionEvent
+     * @throws IOException
+     */
     public void backToMain(ActionEvent actionEvent) throws IOException
 
     {
@@ -58,6 +71,10 @@ public class EditCarController implements Initializable {
     public void editCarInDb(ActionEvent actionEvent) {
     }
 
+    /**
+     * funckja inicjująca pojazd
+     * @param lp
+     */
     public void initCar(int lp) {
         this.carId = lp;
         CarsEntity car = new CarsEntity();
@@ -69,6 +86,11 @@ public class EditCarController implements Initializable {
         }
     }
 
+    /**
+     * funckja ustawiająca dane pojazdu w polach do edycji danych - TextField
+     * @param carData
+     * @throws SQLException
+     */
     private void setCarView(ResultSet carData) throws SQLException {
         while(carData.next())
         {

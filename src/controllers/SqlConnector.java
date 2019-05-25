@@ -12,6 +12,10 @@ public class        SqlConnector {
     private ResultSet response;
     private Statement statement;
 
+    /**
+     * funckja odpowiedzalna za połaczenie z bazą danych
+     * @param connectionName
+     */
     public void getConnection(String connectionName) {
         System.out.println(connectionName);
         switch (connectionName)
@@ -39,6 +43,10 @@ public class        SqlConnector {
         }
     }
 
+    /**
+     * funkcja wstawiająca dane do bazy przesłane w zapytaniu
+     * @param query
+     */
     public void insertData(String query)
     {
         try {
@@ -48,6 +56,11 @@ public class        SqlConnector {
         }
     }
 
+    /**
+     * funkcja zwracająca dane z bazy na podstawie zapytania
+     * @param query
+     * @return
+     */
     public ResultSet getData(String query)
     {
         System.out.println(response);

@@ -43,6 +43,14 @@ public class PassReservationController implements Initializable
 
     }
 
+    /**
+     * funkcja inicjująca w widoku PassReservation szczegóły wstawiając je w odpowiednie etykiety
+     * do wyświetlenia - Label
+     * @param returnDateValue
+     * @param bookDateValue
+     * @param carIds
+     * @throws SQLException
+     */
     public void initData(LocalDate returnDateValue, LocalDate bookDateValue, Integer carIds) throws SQLException
     {
         this.returnDateValue = returnDateValue;
@@ -61,6 +69,11 @@ public class PassReservationController implements Initializable
         this.reservationCarName.setText(carName);
     }
 
+    /**
+     * funkjcja przechodząca do głównej strony aplikacji z widoku PassReservation
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void backToMain(ActionEvent event)throws IOException {
         FXMLLoader loader = new FXMLLoader();
@@ -72,6 +85,11 @@ public class PassReservationController implements Initializable
         passReservationPanel.getChildren().setAll(pane);
     }
 
+    /**
+     * funckja przechodząca do strony konta użytkownika z widoku PassReservation
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void goToAccount(ActionEvent event)throws IOException {
         FXMLLoader loader = new FXMLLoader();

@@ -9,11 +9,20 @@ import java.sql.SQLException;
 public class RentsEntity {
     SqlConnector sqlConnector;
 
+    /**
+     * konstruktor klasy inicjalizujacy połączoenie z bazaa danych
+     */
     public RentsEntity() {
         sqlConnector = new SqlConnector();
         sqlConnector.getConnection("localhost");
     }
 
+    /**
+     * funckjcja pobierająca listę rezerwacji pojazdów z bazy danych
+     * @return
+     * @throws SQLException
+     * @throws IOException
+     */
     public ResultSet getRents() throws SQLException, IOException {
         String query = "SELECT" +
                 "    r.id as lp," +

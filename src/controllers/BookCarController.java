@@ -69,6 +69,12 @@ public class BookCarController implements Initializable {
         }
     }
 
+    /**
+     * funckja odpowiada za dokonanie rezerwacji i jej walidację w widoku BookCar
+     * @param actionEvent
+     * @throws IOException
+     * @throws SQLException
+     */
     public void bookAction(ActionEvent actionEvent) throws IOException, SQLException {
         LocalDate returnDateValue = returnDate.getValue();
         LocalDate bookDateValue = bookDate.getValue();
@@ -122,6 +128,11 @@ public class BookCarController implements Initializable {
         //car.rentCar()
     }
 
+    /**
+     * funkcja przekierowuje do katalogu aut z widoku BookCar
+     * @param actionEvent
+     * @throws IOException
+     */
     public void getCatalogView(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../fxmlData/carView.fxml"));
@@ -132,6 +143,10 @@ public class BookCarController implements Initializable {
         registerFormPanel.getChildren().setAll(pane);
     }
 
+    /**
+     * funkcja inicjuje pojazd w widoku BookCar
+     * @param lp
+     */
     public void initCar(int lp) {
         System.out.println("lp: ");
         System.out.println(lp);

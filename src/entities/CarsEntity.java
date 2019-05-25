@@ -16,6 +16,12 @@ public class CarsEntity {
         sqlConnector.getConnection("localhost");
     }
 
+    /**
+     * funcja realizująca zapytanie pobierające dane pojazdów z bazy danych
+     * @return
+     * @throws SQLException
+     * @throws IOException
+     */
     public ResultSet getCars() throws SQLException, IOException {
 
         String query = "SELECT c.id as lp, c.name, c.class as carClass, c.brand, IF((SELECT COUNT(r.id) " +
@@ -28,6 +34,11 @@ public class CarsEntity {
         return carsData;
     }
 
+    /**
+     * funkcja pobierająca dane pojazdu z bazy danych na podstawie przesłanego id pojazdu w parametrze
+     * @param carId
+     * @return
+     */
     public ResultSet getCar(Integer carId) {
         String query = "SELECT" +
                 "    c.id as lp," +
@@ -43,6 +54,12 @@ public class CarsEntity {
 
     }
 
+    /**
+     * funckja pobierająca pełna nazwę samochodu na podstawie przesłanego id pojazdu w parametrze
+     * @param carId
+     * @return
+     * @throws SQLException
+     */
     public String getCarName(Integer carId) throws SQLException {
         String query = "SELECT CONCAT(c.name, ' ', c.brand) as name FROM cars c WHERE c.id = " + carId;
         ResultSet carNameSet = sqlConnector.getData(query);

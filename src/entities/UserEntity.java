@@ -22,7 +22,9 @@ public class UserEntity {
     @FXML
     private PasswordField passwordFieldAgain;
 
-
+    /**
+     * konstruktor inicjalizujący połączenie z bazą danych
+     */
     public UserEntity() {
         sqlConnector = new SqlConnector();
         sqlConnector.getConnection("localhost");
@@ -66,6 +68,15 @@ public class UserEntity {
 //            statement.executeUpdate(sql);
 //    }
     }
+
+    /**
+     * funckja sprawdzająca dane użytkownika wprowadzone podczas logowania z danymi zapisanymi w bazie
+     * @param login
+     * @param password
+     * @return
+     * @throws SQLException
+     * @throws IOException
+     */
     public boolean loginUser(String login, String password) throws SQLException, IOException {
 
         this.setLogin(login);
@@ -93,6 +104,15 @@ public class UserEntity {
         }
     }
 
+    /**
+     * funckja rejestrująca nowego użytkownika w systemie wraz z walidacją danych wprowadzonych
+     * podczas rejestracji
+     * @param login
+     * @param password
+     * @param repeatPassword
+     * @return
+     * @throws SQLException
+     */
     public Boolean registerUser(String login, String password, String repeatPassword) throws SQLException {
         this.setLogin(login);
         this.setPassword(password);

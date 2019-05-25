@@ -35,12 +35,21 @@ public class LoggedInController implements Initializable
     {
     }
 
+    /**
+     * funckja inicjująca dane powitalne w widoku LoggedIn
+     * @param login
+     */
     public void initData(String login)
     {
         this.loginData = login;
         this.loggedInWelcomeLabel.setText("Witaj " + this.loginData);
     }
 
+    /**
+     * funckja odpowiedzialna za wylogowanie użytkownika
+     * @param actionEvent
+     * @throws IOException
+     */
     public void logoutAction(javafx.event.ActionEvent actionEvent) throws IOException
     {
         FXMLLoader loader = new FXMLLoader();
@@ -55,6 +64,11 @@ public class LoggedInController implements Initializable
         UserSession.getInstace("").cleanUserSession();
     }
 
+    /**
+     * funckja przechodząca do katalogu pojazdów z widoku LoggedIn
+     * @param actionEvent
+     * @throws IOException
+     */
     @FXML
     public void getCatalogView(ActionEvent actionEvent) throws IOException
     {
@@ -67,6 +81,11 @@ public class LoggedInController implements Initializable
         loggedInPanel.getChildren().setAll(pane);
     }
 
+    /**
+     * funckja przechodząca do listy rezerwacji z widoku LoggedIn
+     * @param actionEvent
+     * @throws IOException
+     */
     @FXML
     public void getBookView(ActionEvent actionEvent) throws IOException
     {

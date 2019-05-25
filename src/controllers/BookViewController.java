@@ -65,12 +65,22 @@ public class BookViewController implements Initializable {
         end_city.setCellValueFactory(new PropertyValueFactory<>("end_city"));
     }
 
+    /**
+     * funckja pobierająca listę zarezerwowanych pojazdów
+     * @throws IOException
+     * @throws SQLException
+     */
     private void getBooks() throws IOException, SQLException {
         RentsEntity books = new RentsEntity();
         ResultSet booksData = books.getRents();
         this.putBooksToBookTableModel(booksData);
     }
 
+    /**
+     * funckja ustawiająca widok listy zarezerwowanych pojazdów
+     * @param booksData
+     * @throws SQLException
+     */
     private void putBooksToBookTableModel(ResultSet booksData) throws SQLException {
         while (booksData.next()){
             bookTableModel.add(new BookTableModel(booksData.getInt("lp"), booksData.getString("name"), booksData.getString("start_date"),
@@ -78,9 +88,18 @@ public class BookViewController implements Initializable {
         }
     }
 
+    /**
+     * funckja przechodząca wstecz z widoku BookView
+     * @param actionEvent
+     */
     public void backAction(ActionEvent actionEvent) {
     }
 
+    /**
+     * funckcja przchodząca do strony głównej aplikacji z widoku BookView
+     * @param actionEvent
+     * @throws IOException
+     */
     public void backToMain(ActionEvent actionEvent) throws  IOException{
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../fxmlData/main.fxml"));
@@ -99,6 +118,10 @@ public class BookViewController implements Initializable {
     {
     }
 
+    /**
+     * funkcja obsługująca edycję pojazdu w widoku BookView
+     * @param event
+     */
     public void editAction(ActionEvent event)
     {
     }
@@ -111,6 +134,10 @@ public class BookViewController implements Initializable {
     {
     }
 
+    /**
+     * funckja filtrująca listę pojazdów w widoku BookView
+     * @param keyEvent
+     */
     public void filterByCityOfRent(KeyEvent keyEvent) {
     }
 
