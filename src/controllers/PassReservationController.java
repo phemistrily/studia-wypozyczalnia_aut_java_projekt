@@ -49,11 +49,11 @@ public class PassReservationController implements Initializable {
         System.out.println(this.bookDateValue);
         System.out.println(this.carId);
 
-        this.reservationFrom.setText("test");
-        this.reservationUntil.setText("test2");
+        this.reservationFrom.setText(String.valueOf(this.bookDateValue));
+        this.reservationUntil.setText(String.valueOf(this.returnDateValue));
         CarsEntity carsEntity = new CarsEntity();
-        //String carName = carsEntity.getCarName(carId);
-        this.reservationCarName.setText(String.valueOf(carId));
+        String carName = carsEntity.getCarName(carId);
+        this.reservationCarName.setText(carName);
     }
 
     @FXML
