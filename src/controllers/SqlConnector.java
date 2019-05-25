@@ -7,7 +7,7 @@ package controllers;
 
 import java.sql.*;
 
-public class SqlConnector {
+public class        SqlConnector {
     private Connection conn;
     private ResultSet response;
     private Statement statement;

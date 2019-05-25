@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/wypozyczalnia_aut_java_projekt.iml" filepath="$PROJECT_DIR$/wypozyczalnia_aut_java_projekt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Wypozyczalnia.iml" filepath="$PROJECT_DIR$/Wypozyczalnia.iml" />
     </modules>
   </component>
 </project>

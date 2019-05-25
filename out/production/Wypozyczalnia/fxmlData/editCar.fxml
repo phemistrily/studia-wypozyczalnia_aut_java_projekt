@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="addCarPanel" maxHeight="600.0" maxWidth="800.0" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #EF5350;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EditCarController">
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <Circle fill="#ff9e80" layoutX="595.0" layoutY="391.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.15" radius="194.0" stroke="#ff9e80" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="OUTSIDE">
+      <cursor>
+         <Cursor fx:constant="DEFAULT" />
+      </cursor>
+   </Circle>
+   <Circle fill="#ff9e80" layoutX="193.0" layoutY="394.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.15" radius="193.0" stroke="#ff9e80" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="OUTSIDE">
+      <cursor>
+         <Cursor fx:constant="DEFAULT" />
+      </cursor>
+   </Circle>
+   <Label alignment="CENTER" contentDisplay="CENTER" layoutY="679.0" minHeight="53.0" minWidth="789.0" prefHeight="68.0" prefWidth="1024.0" textAlignment="CENTER">
+      <font>
+         <Font name="Yu Gothic Medium" size="46.0" />
+      </font>
+   </Label>
+   <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="94.0" layoutY="313.0" minHeight="15.0" minWidth="16.0" prefHeight="15.0" prefWidth="16.0" text="ID" textAlignment="RIGHT" textFill="#ffebee">
+      <font>
+         <Font name="Verdana" size="12.0" />
+      </font>
+   </Label>
+   <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="70.0" layoutY="347.0" maxWidth="-Infinity" minHeight="15.0" minWidth="40.0" prefHeight="15.0" prefWidth="40.0" text="Nazwa" textAlignment="CENTER" textFill="#ffebee">
+      <font>
+         <Font name="Verdana" size="12.0" />
+      </font>
+   </Label>
+   <Label alignment="CENTER" contentDisplay="CENTER" layoutY="21.0" minHeight="53.0" minWidth="789.0" prefHeight="68.0" prefWidth="800.0" text="Edytuj samochód w bazie" textAlignment="CENTER" textFill="#ffebee">
+      <font>
+         <Font name="Yu Gothic Medium" size="46.0" />
+      </font>
+   </Label>
+   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="448.0" layoutY="263.0" minHeight="25.0" minWidth="219.0" prefHeight="25.0" prefWidth="294.0" text="Pozostałe opcje: " textAlignment="JUSTIFY" textFill="#ffebee">
+      <font>
+         <Font name="Verdana" size="14.0" />
+      </font>
+   </Label>
+   <Separator layoutX="69.0" layoutY="277.0" prefHeight="3.0" prefWidth="249.0" />
+   <Separator layoutX="77.0" layoutY="82.0" prefHeight="15.0" prefWidth="672.0" />
+   <Button id="catalogBtn" layoutX="521.0" layoutY="325.0" minHeight="25.0" minWidth="142.0" mnemonicParsing="false" onAction="#getCatalogView" prefHeight="43.0" prefWidth="162.0" style="-fx-background-color: #ff9e80;" text="Przejrzyj katalog aut" textFill="WHITE">
+      <font>
+         <Font name="Verdana" size="12.0" />
+      </font>
+   </Button>
+   <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="77.0" layoutY="383.0" maxWidth="-Infinity" minHeight="15.0" minWidth="33.0" prefHeight="15.0" prefWidth="33.0" text="Klasa" textAlignment="CENTER" textFill="#ffebee">
+      <font>
+         <Font name="Verdana" size="12.0" />
+      </font>
+   </Label>
+   <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="70.0" layoutY="422.0" maxWidth="-Infinity" minHeight="15.0" minWidth="40.0" prefHeight="15.0" prefWidth="40.0" text="Marka" textAlignment="CENTER" textFill="#ffebee">
+      <font>
+         <Font name="Verdana" size="12.0" />
+      </font>
+   </Label>
+   <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="43.0" layoutY="458.0" maxWidth="-Infinity" minHeight="15.0" minWidth="41.0" prefHeight="15.0" prefWidth="68.0" text="Lokalizacja" textAlignment="CENTER" textFill="#ffebee">
+      <font>
+         <Font name="Verdana" size="12.0" />
+      </font>
+   </Label>
+   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="253.0" minHeight="25.0" minWidth="219.0" prefHeight="25.0" prefWidth="307.0" text="Informacje o wybranym samochodzie:" textAlignment="JUSTIFY" textFill="#ffebee">
+      <font>
+         <Font name="Verdana" size="14.0" />
+      </font>
+   </Label>
+   <Separator layoutX="530.0" layoutY="287.0" prefHeight="3.0" prefWidth="130.0" />
+   <Button id="catalogBtn" layoutX="521.0" layoutY="387.0" minHeight="25.0" minWidth="142.0" mnemonicParsing="false" onAction="#backAction" prefHeight="43.0" prefWidth="162.0" style="-fx-background-color: #ff9e80;" text="Wstecz" textFill="WHITE">
+      <font>
+         <Font name="Verdana" size="12.0" />
+      </font>
+   </Button>
+   <Button id="catalogBtn" layoutX="521.0" layoutY="450.0" minHeight="25.0" minWidth="142.0" mnemonicParsing="false" onAction="#backToMain" prefHeight="43.0" prefWidth="162.0" style="-fx-background-color: #ff9e80;" text="Strona głowna aplikacji" textFill="WHITE">
+      <font>
+         <Font name="Verdana" size="12.0" />
+      </font>
+   </Button>
+   <Button id="catalogBtn" fx:id="editCarBTN" layoutX="112.0" layoutY="504.0" minHeight="25.0" minWidth="142.0" mnemonicParsing="false" onAction="#editCarInDb" prefHeight="43.0" prefWidth="162.0" style="-fx-background-color: #ff9e80;" text="Edytuj dane" textFill="WHITE">
+      <font>
+         <Font name="Verdana" size="12.0" />
+      </font>
+   </Button>
+   <TextField fx:id="idLabel" layoutX="127.0" layoutY="308.0" />
+   <TextField fx:id="nameLabel" layoutX="127.0" layoutY="342.0" />
+   <TextField fx:id="classLabel" layoutX="127.0" layoutY="378.0" />
+   <TextField fx:id="brandLabel" layoutX="127.0" layoutY="415.0" />
+   <TextField fx:id="localisationLabel" layoutX="127.0" layoutY="453.0" />
+</AnchorPane>
