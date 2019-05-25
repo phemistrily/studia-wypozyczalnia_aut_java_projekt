@@ -5,7 +5,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import models.UserSession;
 
@@ -14,6 +17,7 @@ import java.net.URL;
 import java.sql.Array;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
 
@@ -32,12 +36,19 @@ public class BookCarController implements Initializable {
     private Label brandInfo;
     @FXML
     private Label locationInfo;
+    @FXML
+    private DatePicker returnDate;
+    @FXML
+    private DatePicker bookDate;
+    @FXML
+    private TextField returnCity;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         /**
          * get user instance
          */
+        bookDate.setValue(LocalDate.now());
         System.out.println(UserSession.getInstace("").getUserId());
 
     }
@@ -53,7 +64,57 @@ public class BookCarController implements Initializable {
         }
     }
 
-    public void bookAction(ActionEvent actionEvent) {
+    public void bookAction(ActionEvent actionEvent) throws IOException, SQLException {
+        LocalDate returnDateValue = returnDate.getValue();
+        LocalDate bookDateValue = bookDate.getValue();
+        if(bookDateValue != null && returnDateValue != null)
+        {
+            long date1 = returnDate.getValue().toEpochDay();
+            long date2 = bookDate.getValue().toEpochDay();
+            int  days  = (int) Math.abs(date1 - date2);
+        }
+        String city = returnCity.getText();
+        if(returnDateValue == null)
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Podaj datę zwrotu pojazdu");
+            alert.setHeaderText("Podaj datę zwrotu pojazdu");
+            alert.setContentText("Podaj datę zwrotu pojazdu");
+
+            alert.showAndWait();
+        }
+        else if (bookDateValue == null)
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Podaj datę wynajmu pojazdu");
+            alert.setHeaderText("Podaj datę wynajmu pojazdu");
+            alert.setContentText("Podaj datę wynajmu pojazdu");
+
+            alert.showAndWait();
+        }
+        else if (city.equals(""))
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Podaj miasto, w którym chcesz oddać auto");
+            alert.setHeaderText("Podaj miasto, w którym chcesz oddać auto");
+            alert.setContentText("Podaj miasto, w którym chcesz oddać auto");
+
+            alert.showAndWait();
+        }
+        else
+        {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("../fxmlData/passReservation.fxml"));
+            AnchorPane pane = loader.load();
+            /**
+             * Set scene and pass data through the scenes
+             */
+            PassReservationController passReservationController = new PassReservationController();
+            passReservationController.initData(returnDateValue,bookDateValue,carId);
+            registerFormPanel.getChildren().setAll(pane);
+        }
+        // CarsEntity car = new CarsEntity();
+        //car.rentCar()
     }
 
     public void getCatalogView(ActionEvent actionEvent) throws IOException {

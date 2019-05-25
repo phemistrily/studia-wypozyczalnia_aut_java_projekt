@@ -60,6 +60,8 @@ public class CarViewController implements Initializable
     private TableColumn<CarsTableModel, String> isRented;
     @FXML
     private TableColumn<CarsTableModel, String> localisation;
+    @FXML
+    private TableColumn<CarsTableModel, Integer> price_per_day;
 
     private ObservableList<CarsTableModel> carsTableModel = FXCollections.observableArrayList();
 
@@ -90,6 +92,7 @@ public class CarViewController implements Initializable
         brand.setCellValueFactory(new PropertyValueFactory<>("brand"));
         isRented.setCellValueFactory(new PropertyValueFactory<>("isRented"));
         localisation.setCellValueFactory(new PropertyValueFactory<>("localisation"));
+        price_per_day.setCellValueFactory(new PropertyValueFactory<>("price_per_day"));
     }
 
 
@@ -106,7 +109,7 @@ public class CarViewController implements Initializable
         while (carsData.next())
         {
             carsTableModel.add(new CarsTableModel(carsData.getInt("lp"), carsData.getString("name"), carsData.getString("carClass"),
-                    carsData.getString("brand"), carsData.getString("is_rented"), carsData.getString("localisation")));
+                    carsData.getString("brand"), carsData.getString("is_rented"), carsData.getString("localisation"), carsData.getInt("price_per_day")));
         }
     }
 

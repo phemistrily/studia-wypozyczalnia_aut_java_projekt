@@ -110,4 +110,10 @@ public class BookViewController implements Initializable {
     public void filterByClass(KeyEvent keyEvent)
     {
     }
+
+    public void filterByCityOfRent(KeyEvent keyEvent) {
+    }
+
+    public void filterByCityOfReturn(KeyEvent keyEvent) {
+    }
 }

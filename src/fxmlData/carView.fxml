@@ -18,12 +18,13 @@
         </Label>
         <TableView fx:id="carCatalogTableView" layoutY="37.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="327.0" prefWidth="800.0" AnchorPane.bottomAnchor="236.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="37.0">
             <columns>
-                <TableColumn fx:id="lp" prefWidth="41.0" text="L.p." />
+                <TableColumn fx:id="lp" prefWidth="41.0" text="Identyfikator Auta" />
                 <TableColumn fx:id="name" prefWidth="131.0" text="Nazwa" />
                 <TableColumn fx:id="carClass" prefWidth="53.0" text="Klasa" />
                 <TableColumn fx:id="brand" prefWidth="130.0" text="Marka" />
                 <TableColumn fx:id="isRented" prefWidth="88.0" text="Czy wynajęty" />
                 <TableColumn fx:id="localisation" prefWidth="170.0" text="Lokalizacja (miasto)" />
+                <TableColumn fx:id="price_per_day" prefWidth="170.0" text="Cena za dzień" />
             </columns>
         </TableView>
         <Button fx:id="backButton" layoutX="575.0" layoutY="561.0" mnemonicParsing="false" onAction="#backAction" style="-fx-background-color: #569DAB;" styleClass="buttonsApp" text="Wstecz" textFill="#f8f8f8" textOverrun="CLIP" />

@@ -61,6 +61,7 @@ public class DashboardController implements Initializable
             LoggedInController logggedInController = loader.getController();
             logggedInController.initData(login);
             primaryStage.getChildren().setAll(pane);
+            UserSession.dropInstance();
             UserSession.getInstace(user.getId());
             System.out.println("uzytkownik:");
             System.out.println(user.getId());

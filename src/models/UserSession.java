@@ -18,12 +18,20 @@ public final class UserSession {
         return instance;
     }
 
+    public static void dropInstance() {
+        instance = null;
+    }
+
     public String getUserId() {
         return userId;
     }
 
     public void cleanUserSession() {
         userId = "";// or null
+    }
+
+    public void setUserId(String thisUserId) {
+        userId = thisUserId;
     }
 
     @Override

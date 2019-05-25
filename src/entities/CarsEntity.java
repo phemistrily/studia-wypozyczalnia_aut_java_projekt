@@ -18,15 +18,11 @@ public class CarsEntity {
 
     public ResultSet getCars() throws SQLException, IOException {
 
-        String query = "SELECT" +
-                "    c.id as lp," +
-                "    c.name ," +
-                "    c.class AS carClass," +
-                "    c.brand," +
-                "    c.is_rented," +
-                "    c.localisation" +
-                " FROM" +
-                "    cars c";
+        String query = "SELECT c.id as lp, c.name, c.class as carClass, c.brand, IF((SELECT COUNT(r.id) " +
+                "FROM rents r " +
+                "WHERE r.car_id = c.id AND" +
+                " NOW() BETWEEN start_date AND end_date LIMIT 1) = 0,'wolny','zarezerwowany') as is_rented," +
+                " c.localisation, c.price_per_day FROM cars c;";
         System.out.println(query);
         ResultSet carsData = sqlConnector.getData(query);
         return carsData;
@@ -45,5 +41,11 @@ public class CarsEntity {
         ResultSet carData = sqlConnector.getData(query);
         return carData;
 
+    }
+
+    public String getCarName(Integer carId) throws SQLException {
+        String query = "SELECT CONCAT(c.name, ' ', c.brand) as name FROM cars c WHERE c.id = " + carId;
+        ResultSet carNameSet = sqlConnector.getData(query);
+        return carNameSet.getString("name");
     }
 }
