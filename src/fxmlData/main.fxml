@@ -22,7 +22,7 @@
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </Circle>
-      <Button fx:id="loginBtn" layoutX="102.0" layoutY="397.0" minHeight="23.0" minWidth="153.0" mnemonicParsing="false" onAction="#loginAction" prefHeight="53.0" prefWidth="153.0" text="Zaloguj się do systemu">
+      <Button fx:id="loginBtn" layoutX="110.0" layoutY="417.0" minHeight="23.0" minWidth="153.0" mnemonicParsing="false" onAction="#loginAction" prefHeight="33.0" prefWidth="157.0" text="Zaloguj się do systemu">
          <font>
             <Font name="Verdana" size="12.0" />
          </font>
@@ -32,13 +32,13 @@
             <Font name="Verdana" size="12.0" />
          </font>
       </Label>
-      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="27.0" layoutY="342.0" maxWidth="-Infinity" minHeight="15.0" minWidth="42.0" prefHeight="15.0" prefWidth="42.0" text="Hasło:" textAlignment="CENTER" textFill="#ffebee">
+      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="30.0" layoutY="356.0" maxWidth="-Infinity" minHeight="15.0" minWidth="42.0" prefHeight="15.0" prefWidth="42.0" text="Hasło:" textAlignment="CENTER" textFill="#ffebee">
          <font>
             <Font name="Verdana" size="12.0" />
          </font>
       </Label>
       <TextField fx:id="loginLabel" layoutX="166.0" layoutY="301.0" minWidth="-Infinity" />
-      <PasswordField fx:id="passwordField" layoutX="166.0" layoutY="337.0" minHeight="-Infinity" />
+      <PasswordField fx:id="passwordField" layoutX="166.0" layoutY="351.0" minHeight="-Infinity" />
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="14.0" minHeight="53.0" minWidth="789.0" prefHeight="68.0" prefWidth="800.0" text="System wypożyczalni samochodów" textAlignment="CENTER" textFill="#ffebee">
          <font>
             <Font name="Yu Gothic Medium" size="46.0" />
@@ -49,17 +49,17 @@
             <Font name="Verdana" size="27.0" />
          </font>
       </Label>
-      <Button fx:id="getRegisterFormBtn" layoutX="553.0" layoutY="398.0" minHeight="25.0" minWidth="144.0" mnemonicParsing="false" onAction="#getRegisterForm" prefHeight="51.0" prefWidth="144.0" text="Zarejestruj się !">
+      <Button fx:id="getRegisterFormBtn" layoutX="561.0" layoutY="417.0" minHeight="25.0" minWidth="122.0" mnemonicParsing="false" onAction="#getRegisterForm" prefHeight="32.0" prefWidth="122.0" text="Zarejestruj się !">
          <font>
             <Font name="Verdana" size="12.0" />
          </font>
       </Button>
-      <Button id="catalogBtn" layoutX="300.0" layoutY="508.0" minHeight="25.0" minWidth="142.0" mnemonicParsing="false" onAction="#showCarView" prefHeight="78.0" prefWidth="234.0" style="-fx-background-color: #FFEBEE;" text="Przejrzyj katalog aut">
+      <Button id="catalogBtn" layoutX="326.0" layoutY="554.0" minHeight="25.0" minWidth="142.0" mnemonicParsing="false" onAction="#showCarView" prefHeight="32.0" prefWidth="149.0" style="-fx-background-color: #FFEBEE;" text="Przejrzyj katalog aut">
          <font>
             <Font name="Verdana" size="12.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="62.0" layoutY="254.0" minHeight="25.0" minWidth="219.0" prefHeight="25.0" prefWidth="219.0" text="Zaloguj się do systemu:" textAlignment="JUSTIFY" textFill="#ffebee">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="65.0" layoutY="254.0" minHeight="25.0" minWidth="219.0" prefHeight="25.0" prefWidth="219.0" text="Zaloguj się do systemu:" textAlignment="JUSTIFY" textFill="#ffebee">
          <font>
             <Font name="Verdana" size="18.0" />
          </font>

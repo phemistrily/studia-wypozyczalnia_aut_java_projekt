@@ -3,9 +3,12 @@ package controllers;
 import entities.CarsEntity;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,6 +17,8 @@ import java.util.ResourceBundle;
 public class EditCarController implements Initializable {
 
     private int carId;
+    @FXML
+    private AnchorPane editCarPanel;
     @FXML
     private TextField idLabel;
     @FXML
@@ -38,7 +43,16 @@ public class EditCarController implements Initializable {
     public void backAction(ActionEvent actionEvent) {
     }
 
-    public void backToMain(ActionEvent actionEvent) {
+    public void backToMain(ActionEvent actionEvent) throws IOException
+
+    {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../fxmlData/main.fxml"));
+        AnchorPane pane = loader.load();
+        /**
+         * Set scene and pass data through the scenes
+         */
+        editCarPanel.getChildren().setAll(pane);
     }
 
     public void editCarInDb(ActionEvent actionEvent) {

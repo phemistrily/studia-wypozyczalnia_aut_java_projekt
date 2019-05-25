@@ -30,7 +30,7 @@
          <Cursor fx:constant="DEFAULT" />
       </cursor>
    </Circle>
-   <Button fx:id="registerActionBtn" layoutX="102.0" layoutY="397.0" minHeight="23.0" minWidth="153.0" mnemonicParsing="false" onAction="#registerAction" prefHeight="53.0" prefWidth="200.0" text="Zarejestruj się do systemu">
+   <Button fx:id="registerActionBtn" layoutX="97.0" layoutY="417.0" minHeight="23.0" minWidth="153.0" mnemonicParsing="false" onAction="#registerAction" prefHeight="32.0" prefWidth="183.0" text="Zarejestruj się do systemu">
       <font>
          <Font name="Verdana" size="12.0" />
       </font>
@@ -58,7 +58,7 @@
          <Font name="Verdana" size="27.0" />
       </font>
    </Label>
-   <Button layoutX="553.0" layoutY="398.0" minHeight="25.0" minWidth="144.0" mnemonicParsing="false" onAction="#getWelcomePanel" prefHeight="51.0" prefWidth="144.0" text="Zaloguj się">
+   <Button layoutX="550.0" layoutY="417.0" minHeight="25.0" minWidth="122.0" mnemonicParsing="false" onAction="#getWelcomePanel" prefHeight="32.0" prefWidth="122.0" text="Zaloguj się">
       <font>
          <Font name="Verdana" size="12.0" />
       </font>
@@ -76,7 +76,7 @@
          <Font name="Verdana" size="12.0" />
       </font>
    </Label>
-   <Button id="catalogBtn" layoutX="300.0" layoutY="508.0" minHeight="25.0" minWidth="142.0" mnemonicParsing="false" onAction="#getCatalogView" prefHeight="78.0" prefWidth="234.0" style="-fx-background-color: #FFEBEE;" text="Przejrzyj katalog aut">
+   <Button id="catalogBtn" layoutX="326.0" layoutY="554.0" minHeight="25.0" minWidth="142.0" mnemonicParsing="false" onAction="#getCatalogView" prefHeight="32.0" prefWidth="149.0" style="-fx-background-color: #FFEBEE;" text="Przejrzyj katalog aut">
       <font>
          <Font name="Verdana" size="12.0" />
       </font>

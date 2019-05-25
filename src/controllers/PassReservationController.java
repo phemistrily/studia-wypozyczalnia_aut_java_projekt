@@ -63,6 +63,13 @@ public class PassReservationController implements Initializable
 
     @FXML
     void backToMain(ActionEvent event)throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../fxmlData/main.fxml"));
+        AnchorPane pane = loader.load();
+        /**
+         * Set scene and pass data through the scenes
+         */
+        passReservationPanel.getChildren().setAll(pane);
     }
 
     @FXML
