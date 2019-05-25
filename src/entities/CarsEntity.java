@@ -46,6 +46,7 @@ public class CarsEntity {
     public String getCarName(Integer carId) throws SQLException {
         String query = "SELECT CONCAT(c.name, ' ', c.brand) as name FROM cars c WHERE c.id = " + carId;
         ResultSet carNameSet = sqlConnector.getData(query);
+        carNameSet.next();
         return carNameSet.getString("name");
     }
 }

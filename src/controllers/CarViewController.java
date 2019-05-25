@@ -35,8 +35,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.function.Predicate;
 
-public class CarViewController implements Initializable
-{
+public class CarViewController implements Initializable {
 
     @FXML
     private TextField localisationBTN;
@@ -66,17 +65,13 @@ public class CarViewController implements Initializable
     private ObservableList<CarsTableModel> carsTableModel = FXCollections.observableArrayList();
 
     @Override
-    public void initialize(URL location, ResourceBundle resources)
-    {
+    public void initialize(URL location, ResourceBundle resources) {
         this.initializeFactory();
-        try
-        {
+        try {
             this.getCars();
-        } catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
-        } catch (SQLException e)
-        {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         carCatalogTableView.setItems(carsTableModel);
@@ -84,8 +79,7 @@ public class CarViewController implements Initializable
 
     FilteredList filter = new FilteredList(carsTableModel, e -> true);
 
-    private void initializeFactory()
-    {
+    private void initializeFactory() {
         lp.setCellValueFactory(new PropertyValueFactory<>("lp"));
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
         carClass.setCellValueFactory(new PropertyValueFactory<>("carClass"));
@@ -96,18 +90,14 @@ public class CarViewController implements Initializable
     }
 
 
-
-    private void getCars() throws IOException, SQLException
-    {
+    private void getCars() throws IOException, SQLException {
         CarsEntity cars = new CarsEntity();
         ResultSet carsData = cars.getCars();
         this.putCarsToCarsTableModel(carsData);
     }
 
-    private void putCarsToCarsTableModel(ResultSet carsData) throws SQLException
-    {
-        while (carsData.next())
-        {
+    private void putCarsToCarsTableModel(ResultSet carsData) throws SQLException {
+        while (carsData.next()) {
             carsTableModel.add(new CarsTableModel(carsData.getInt("lp"), carsData.getString("name"), carsData.getString("carClass"),
                     carsData.getString("brand"), carsData.getString("is_rented"), carsData.getString("localisation"), carsData.getInt("price_per_day")));
         }
@@ -115,42 +105,35 @@ public class CarViewController implements Initializable
 
 
     @FXML
-    void backStepButton(ActionEvent event)
-    {
+    void backStepButton(ActionEvent event) {
 
     }
 
     @FXML
-    void mainAppView(ActionEvent event)
-    {
+    void mainAppView(ActionEvent event) {
 
     }
 
 
     public void bookCar(ActionEvent event) throws IOException {
-        if(UserSession.getInstace("").getUserId().equals("") || UserSession.getInstace("").getUserId().equals(null))
-        {
+        if (UserSession.getInstace("").getUserId().equals("") || UserSession.getInstace("").getUserId().equals(null)) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Aby zamówić auto musisz się zalogować");
             alert.setHeaderText("Aby zamówić auto musisz się zalogować");
             alert.setContentText("Aby zamówić auto musisz się zalogować");
 
             alert.showAndWait();
-        }
-        else
-        {
+        } else {
             CarsTableModel car = carCatalogTableView.getSelectionModel().getSelectedItem();//check if not selected
             Integer id = car.getLp();
-            if(id == null)
-            {
+            if (id == null) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Wybierz auto");
                 alert.setHeaderText("Wybierz auto");
                 alert.setContentText("Wybierz auto");
 
                 alert.showAndWait();
-            }
-            else {
+            } else {
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource("../fxmlData/bookCar.fxml"));
                 AnchorPane pane = loader.load();
@@ -164,8 +147,7 @@ public class CarViewController implements Initializable
         }
     }
 
-    public void backToMain(ActionEvent event) throws IOException
-    {
+    public void backToMain(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../fxmlData/main.fxml"));
         AnchorPane pane = loader.load();
@@ -175,20 +157,16 @@ public class CarViewController implements Initializable
         carView.getChildren().setAll(pane);
     }
 
-    public void backAction(ActionEvent event)
-    {
+    public void backAction(ActionEvent event) {
 
     }
 
-    public void filtrByLocalisation(javafx.scene.input.KeyEvent keyEvent)
-    {
+    public void filtrByLocalisation(javafx.scene.input.KeyEvent keyEvent) {
         localisationBTN.textProperty().addListener((observable, oldValue, newValue) -> {
-            filter.setPredicate((Predicate<? super CarsTableModel>)(CarsTableModel ctb)->{
-                if(newValue.isEmpty() || newValue == null)
-                {
+            filter.setPredicate((Predicate<? super CarsTableModel>) (CarsTableModel ctb) -> {
+                if (newValue.isEmpty() || newValue == null) {
                     return true;
-                }
-                else if(ctb.getLocalisation().contains(newValue)){
+                } else if (ctb.getLocalisation().contains(newValue)) {
                     return true;
                 }
                 return false;
@@ -200,15 +178,12 @@ public class CarViewController implements Initializable
     }
 
 
-    public void filtrByClass(KeyEvent keyEvent)
-    {
+    public void filtrByClass(KeyEvent keyEvent) {
         ByClassBTN.textProperty().addListener((observable, oldValue, newValue) -> {
-            filter.setPredicate((Predicate<? super CarsTableModel>)(CarsTableModel ctb)->{
-                if(newValue.isEmpty() || newValue == null)
-                {
+            filter.setPredicate((Predicate<? super CarsTableModel>) (CarsTableModel ctb) -> {
+                if (newValue.isEmpty() || newValue == null) {
                     return true;
-                }
-                else if(ctb.getCarClass().contains(newValue)){
+                } else if (ctb.getCarClass().contains(newValue)) {
                     return true;
                 }
                 return false;
@@ -220,17 +195,14 @@ public class CarViewController implements Initializable
     }
 
     public void editAction(ActionEvent event) throws IOException {
-        if(UserSession.getInstace("").getUserId().equals("") || UserSession.getInstace("").getUserId().equals(null))
-        {
+        if (UserSession.getInstace("").getUserId().equals("") || UserSession.getInstace("").getUserId().equals(null)) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Aby edytować auto musisz być administratorem");
             alert.setHeaderText("Aby edytować auto musisz być administratorem");
             alert.setContentText("Aby edytować auto musisz być administratorem");
 
             alert.showAndWait();
-        }
-        else
-        {
+        } else {
             CarsTableModel car = carCatalogTableView.getSelectionModel().getSelectedItem();
             System.out.println(car.getLp());
             FXMLLoader loader = new FXMLLoader();

@@ -53,6 +53,11 @@ public class BookCarController implements Initializable {
 
     }
 
+    /**
+     * funkcja odpowiada za ustawianie tekstu wejsciowego dla widoku BookCar
+     * @param carData
+     * @throws SQLException
+     */
     private void setCarView(ResultSet carData) throws SQLException {
         while(carData.next())
         {
@@ -109,8 +114,8 @@ public class BookCarController implements Initializable {
             /**
              * Set scene and pass data through the scenes
              */
-            PassReservationController passReservationController = new PassReservationController();
-            passReservationController.initData(returnDateValue,bookDateValue,carId);
+            PassReservationController passsReservationController = loader.getController();
+            passsReservationController.initData(returnDateValue,bookDateValue,carId);
             registerFormPanel.getChildren().setAll(pane);
         }
         // CarsEntity car = new CarsEntity();
