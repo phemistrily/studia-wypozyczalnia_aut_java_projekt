@@ -75,6 +75,8 @@ public class LoggedInController implements Initializable
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../fxmlData/carView.fxml"));
         AnchorPane pane = loader.load();
+        CarViewController carViewController = loader.getController();
+        carViewController.initData("loggedIn");
         /**
          * Set scene and pass data through the scenes
          */

@@ -2,21 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52ffa315-876b-4e82-93e2-369926005fae" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/out/production/studia-wypozyczalnia_aut_java_projekt/fxmlData/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/studia-wypozyczalnia_aut_java_projekt/fxmlData/main.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/BookCarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/BookCarController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/CarViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/CarViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/DashboardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/LoggedInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/LoggedInController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/PassReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/PassReservationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/RegisterPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/RegisterPanelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/CarsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/CarsEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/RentsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/RentsEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/UserEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fxmlData/addCar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/fxmlData/addCar.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fxmlData/carView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/fxmlData/carView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/UserSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/UserSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studia-wypozyczalnia_aut_java_projekt.iml" beforeDir="false" afterPath="$PROJECT_DIR$/studia-wypozyczalnia_aut_java_projekt.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studia-wypozyczalnia_aut_java_projekt.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/studia-wypozyczalnia_aut_java_projekt.ipr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studia-wypozyczalnia_aut_java_projekt.iws" beforeDir="false" afterPath="$PROJECT_DIR$/studia-wypozyczalnia_aut_java_projekt.iws" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,14 +20,39 @@
     <option name="delegatedBuild" value="true" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.49758878">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/controllers/CarViewController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="257">
-                  <caret line="238" selection-start-line="238" selection-end-line="238" />
+                <state relative-caret-position="274">
+                  <caret line="115" column="41" selection-start-line="115" selection-start-column="41" selection-end-line="115" selection-end-column="41" />
+                  <folding>
+                    <element signature="e#3507#3508#0" expanded="true" />
+                    <element signature="e#3555#3556#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/.gitignore">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="231">
+                  <caret line="31" column="58" selection-start-line="31" selection-start-column="58" selection-end-line="31" selection-end-column="58" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/controllers/DashboardController.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="163">
+                  <caret line="97" column="8" selection-start-line="97" selection-start-column="8" selection-end-line="98" selection-end-column="43" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -61,15 +76,6 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/entities/CarsEntity.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="526">
-                  <caret line="68" selection-start-line="68" selection-end-line="68" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/entities/RentsEntity.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="233">
@@ -88,29 +94,20 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/entities/UserEntity.java">
+            <entry file="file://$PROJECT_DIR$/src/fxmlData/carView.fxml">
+              <provider editor-type-id="JavaFX-Scene-Builder" />
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="359">
-                  <caret line="164" column="12" lean-forward="true" selection-start-line="164" selection-start-column="12" selection-end-line="164" selection-end-column="53" />
+                <state relative-caret-position="161">
+                  <caret line="31" column="112" selection-start-line="31" selection-start-column="102" selection-end-line="31" selection-end-column="112" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/fxmlData/carView.fxml">
-              <provider editor-type-id="JavaFX-Scene-Builder" />
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="484">
-                  <caret line="50" column="104" selection-start-line="50" selection-start-column="104" selection-end-line="50" selection-end-column="104" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/models/UserSession.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
+                <state relative-caret-position="253">
+                  <caret line="46" column="30" lean-forward="true" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#860#861#0" expanded="true" />
@@ -133,8 +130,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/controllers/PassReservationController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="113">
-                  <caret line="78" column="122" selection-start-line="78" selection-start-column="122" selection-end-line="78" selection-end-column="122" />
+                <state relative-caret-position="129">
+                  <caret line="87" column="40" lean-forward="true" selection-start-line="87" selection-start-column="40" selection-end-line="87" selection-end-column="40" />
                 </state>
               </provider>
             </entry>
@@ -155,6 +152,8 @@
     <findStrings>
       <find>aby zamów</find>
       <find>ab</find>
+      <find>carv</find>
+      <find>carView.fxml</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -173,23 +172,24 @@
         <option value="$PROJECT_DIR$/src/UnitTest1.java" />
         <option value="$PROJECT_DIR$/testy/UnitTest1Test.java" />
         <option value="$PROJECT_DIR$/testy/MainTest.java" />
-        <option value="$PROJECT_DIR$/src/controllers/RegisterPanelController.java" />
-        <option value="$PROJECT_DIR$/src/controllers/LoggedInController.java" />
         <option value="$PROJECT_DIR$/src/entities/UserEntity.java" />
         <option value="$PROJECT_DIR$/src/fxmlData/carView.fxml" />
         <option value="$PROJECT_DIR$/src/fxmlData/addCar.fxml" />
-        <option value="$PROJECT_DIR$/src/controllers/CarViewController.java" />
         <option value="$PROJECT_DIR$/src/entities/CarsEntity.java" />
-        <option value="$PROJECT_DIR$/src/controllers/BookCarController.java" />
         <option value="$PROJECT_DIR$/src/controllers/PassReservationController.java" />
         <option value="$PROJECT_DIR$/src/entities/RentsEntity.java" />
         <option value="$PROJECT_DIR$/src/models/UserSession.java" />
+        <option value="$PROJECT_DIR$/src/controllers/CarViewController.java" />
+        <option value="$PROJECT_DIR$/src/controllers/DashboardController.java" />
+        <option value="$PROJECT_DIR$/src/controllers/BookCarController.java" />
+        <option value="$PROJECT_DIR$/src/controllers/LoggedInController.java" />
+        <option value="$PROJECT_DIR$/src/controllers/RegisterPanelController.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
-    <option name="width" value="1899" />
+    <option name="width" value="2574" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
@@ -341,19 +341,18 @@
     <option name="totallyTimeSpent" value="4392000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1899" height="1047" extended-state="0" />
-    <editor active="true" />
+    <frame x="-7" y="0" width="2574" height="1047" extended-state="0" />
     <layout>
       <window_info id="Capture Tool" order="0" />
       <window_info id="Image Layers" order="1" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.1266993" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.09268098" />
       <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="4" />
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.51531726" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.51531726" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -396,13 +395,6 @@
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/event/EventHandler.java" />
     <entry file="file://$PROJECT_DIR$/src/test/ProjektTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/controllers/DashboardController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/ConfigClassTest.java" />
     <entry file="file://$PROJECT_DIR$/testy/UnitTest1Test.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -428,13 +420,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
@@ -505,24 +490,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fxmlData/carView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="50" column="104" selection-start-line="50" selection-start-column="104" selection-end-line="50" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/fxmlData/addCar.fxml">
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/CarViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="238" selection-start-line="238" selection-end-line="238" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/entities/CarsEntity.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -549,20 +519,6 @@
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/BookCarController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="127" column="93" lean-forward="true" selection-start-line="127" selection-start-column="93" selection-end-line="127" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/PassReservationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="78" column="122" selection-start-line="78" selection-start-column="122" selection-end-line="78" selection-end-column="122" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/RegisterPanelController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
@@ -579,12 +535,62 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/UserSession.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
+        <state relative-caret-position="253">
+          <caret line="46" column="30" lean-forward="true" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#860#861#0" expanded="true" />
             <element signature="e#891#892#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fxmlData/carView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="31" column="112" selection-start-line="31" selection-start-column="102" selection-end-line="31" selection-end-column="112" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/BookCarController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="127" column="93" lean-forward="true" selection-start-line="127" selection-start-column="93" selection-end-line="127" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="31" column="58" selection-start-line="31" selection-start-column="58" selection-end-line="31" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/PassReservationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="87" column="40" lean-forward="true" selection-start-line="87" selection-start-column="40" selection-end-line="87" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/CarViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="115" column="41" selection-start-line="115" selection-start-column="41" selection-end-line="115" selection-end-column="41" />
+          <folding>
+            <element signature="e#3507#3508#0" expanded="true" />
+            <element signature="e#3555#3556#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/DashboardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="97" column="8" selection-start-line="97" selection-start-column="8" selection-end-line="98" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

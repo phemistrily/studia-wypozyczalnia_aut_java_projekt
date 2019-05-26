@@ -69,6 +69,8 @@ public class CarViewController implements Initializable {
     @FXML
     private Button addButton;
 
+    private String lastLocation;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
@@ -107,6 +109,11 @@ public class CarViewController implements Initializable {
         }
         carCatalogTableView.setItems(carsTableModel);
 
+    }
+
+    public void initData(String lastLocation)
+    {
+        this.lastLocation = lastLocation;
     }
 
     FilteredList filter = new FilteredList(carsTableModel, e -> true);
@@ -189,8 +196,24 @@ public class CarViewController implements Initializable {
         carView.getChildren().setAll(pane);
     }
 
-    public void backAction(ActionEvent event) {
-
+    public void backAction(ActionEvent event) throws IOException {
+        //carView.getScene().getWindow().hide(); //zamkniecie aplikacji
+        FXMLLoader loader = new FXMLLoader();
+        String fxmlControllerData;
+        if (!lastLocation.isEmpty())
+        {
+            fxmlControllerData = "../fxmlData/" + this.lastLocation + ".fxml";
+        }
+        else
+        {
+            fxmlControllerData = "../fxmlData/main.fxml";
+        }
+        loader.setLocation(getClass().getResource(fxmlControllerData));
+        AnchorPane pane = loader.load();
+        /**
+         * Set scene and pass data through the scenes
+         */
+        carView.getChildren().setAll(pane);
     }
 
     public void filtrByLocalisation(javafx.scene.input.KeyEvent keyEvent) {
