@@ -34,6 +34,9 @@ public class PassReservationController implements Initializable
     @FXML
     private Button mainButton;
 
+    @FXML
+    private Label reservationPrice;
+
     private LocalDate returnDateValue;
     private LocalDate bookDateValue;
     private Integer carId;
@@ -71,10 +74,17 @@ public class PassReservationController implements Initializable
         RentsEntity rentsEntity = new RentsEntity();
 
         String carName = carsEntity.getCarName(carId);
+        String dailypricePerRent = carsEntity.getPriceForRent(carId);
+        long date1 = returnDateValue.toEpochDay();
+        long date2 = bookDateValue.toEpochDay();
+        int  days  = (int) Math.abs(date1 - date2);
+        int pricePerRent = Integer.valueOf(dailypricePerRent) * days;
+
 
         this.reservationFrom.setText(String.valueOf(this.bookDateValue));
         this.reservationUntil.setText(String.valueOf(this.returnDateValue));
         this.reservationCarName.setText(carName);
+        this.reservationPrice.setText(String.valueOf(pricePerRent));
 
         rentsEntity.createRent(String.valueOf(this.bookDateValue), String.valueOf(this.returnDateValue), carId, returnCity);
     }

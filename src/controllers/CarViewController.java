@@ -84,6 +84,7 @@ public class CarViewController implements Initializable {
             {
                 bookCarBtn.setVisible(false);
                 editButton.setVisible(false);
+                addButton.setVisible(false);
                 System.out.println("dziala");
                 System.out.println(UserSession.getInstace("").getUserRole());
             }

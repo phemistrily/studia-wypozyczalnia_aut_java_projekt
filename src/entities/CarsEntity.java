@@ -67,4 +67,10 @@ public class CarsEntity {
         return carNameSet.getString("name");
     }
 
+    public String getPriceForRent(Integer carId) throws SQLException {
+        String getPriceQuery = "SELECT price_per_day FROM cars WHERE id = " + carId;
+        ResultSet priceForRent = sqlConnector.getData(getPriceQuery);
+        priceForRent.next();
+        return priceForRent.getString("price_per_day");
+    }
 }
