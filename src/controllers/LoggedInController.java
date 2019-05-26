@@ -16,6 +16,7 @@ import models.UserSession;
 import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class LoggedInController implements Initializable
@@ -50,8 +51,7 @@ public class LoggedInController implements Initializable
      * @param actionEvent
      * @throws IOException
      */
-    public void logoutAction(javafx.event.ActionEvent actionEvent) throws IOException
-    {
+    public void logoutAction(javafx.event.ActionEvent actionEvent) throws IOException, SQLException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../fxmlData/main.fxml"));
         AnchorPane pane = loader.load();

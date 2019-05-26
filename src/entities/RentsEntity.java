@@ -1,6 +1,7 @@
 package entities;
 
 import controllers.SqlConnector;
+import models.UserSession;
 
 import java.io.IOException;
 import java.sql.ResultSet;
@@ -37,5 +38,14 @@ public class RentsEntity {
         System.out.println(query);
         ResultSet rentsData = sqlConnector.getData(query);
         return rentsData;
+    }
+
+    public void createRent(String bookDate, String returnDate, Integer carId, String returnCity) throws SQLException {
+        String createRentQuery = "INSERT INTO rents (car_id, start_date, end_date, start_city, end_city, user_id, cash_per_day)" +
+                " SELECT " + carId + ",'" + bookDate + " 00:00:00','" +
+                returnDate + " 00:00:00',localisation,'" + returnCity + "'," + UserSession.getInstace("").getUserId() +
+                ", price_per_day FROM cars WHERE id = " + carId;
+        System.out.println(createRentQuery);
+        sqlConnector.insertData(createRentQuery);
     }
 }

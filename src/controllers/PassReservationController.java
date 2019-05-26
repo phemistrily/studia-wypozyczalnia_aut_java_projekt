@@ -1,6 +1,7 @@
 package controllers;
 
 import entities.CarsEntity;
+import entities.RentsEntity;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -36,6 +37,7 @@ public class PassReservationController implements Initializable
     private LocalDate returnDateValue;
     private LocalDate bookDateValue;
     private Integer carId;
+    private String returnCity;
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
@@ -49,24 +51,32 @@ public class PassReservationController implements Initializable
      * @param returnDateValue
      * @param bookDateValue
      * @param carIds
+     * @param returnCity
      * @throws SQLException
      */
-    public void initData(LocalDate returnDateValue, LocalDate bookDateValue, Integer carIds) throws SQLException
+    public void initData(LocalDate returnDateValue, LocalDate bookDateValue, Integer carIds, String returnCity) throws SQLException
     {
         this.returnDateValue = returnDateValue;
         this.bookDateValue = bookDateValue;
         this.carId = carIds;
+        this.returnCity = returnCity;
 
         System.out.println("init data");
         System.out.println(this.returnDateValue);
         System.out.println(this.bookDateValue);
         System.out.println(this.carId);
 
+
+        CarsEntity carsEntity = new CarsEntity();
+        RentsEntity rentsEntity = new RentsEntity();
+
+        String carName = carsEntity.getCarName(carId);
+
         this.reservationFrom.setText(String.valueOf(this.bookDateValue));
         this.reservationUntil.setText(String.valueOf(this.returnDateValue));
-        CarsEntity carsEntity = new CarsEntity();
-        String carName = carsEntity.getCarName(carId);
         this.reservationCarName.setText(carName);
+
+        rentsEntity.createRent(String.valueOf(this.bookDateValue), String.valueOf(this.returnDateValue), carId, returnCity);
     }
 
     /**

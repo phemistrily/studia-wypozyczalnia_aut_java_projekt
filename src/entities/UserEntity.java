@@ -21,6 +21,7 @@ public class UserEntity {
     private PasswordField passwordField;
     @FXML
     private PasswordField passwordFieldAgain;
+    private String roleId;
 
     /**
      * konstruktor inicjalizujący połączenie z bazą danych
@@ -156,6 +157,8 @@ public class UserEntity {
         ResultSet copiedUsersEntity = sqlConnector.getData(checkUserExistQuery);
         copiedUsersEntity.last();
         int size = copiedUsersEntity.getRow();
+        System.out.println("userSize");
+        System.out.println(size);
         if(size == 0)
         {
             String createUserQuery = "INSERT INTO users (email, password, role, active) VALUES ('" + this.login + "', '" + this.password + "',1,1)";
@@ -183,8 +186,35 @@ public class UserEntity {
             alert.setTitle("Nie zarejestrowano");
             alert.setHeaderText("Użytkownik istnieje w systemie");
             alert.setContentText("Użytkownik istnieje w systemie");
+
+            alert.showAndWait();
             return false;
         }
     }
 
+    public ResultSet getUserData(String userId)
+    {
+        String query = "SELECT email, role, active FROM users WHERE id = " + userId;
+        ResultSet userData = sqlConnector.getData(query);
+        this.roleId = this.extractRole(userData);
+        return userData;
+    }
+
+    public String extractRole(ResultSet userData) {
+        try {
+            userData.next();
+            return userData.getString("role");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public String getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(String roleId) {
+        this.roleId = roleId;
+    }
 }

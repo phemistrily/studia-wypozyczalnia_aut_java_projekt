@@ -28,6 +28,7 @@ import javafx.stage.Stage;
 import models.UserSession;
 
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
@@ -63,9 +64,39 @@ public class CarViewController implements Initializable {
     private TableColumn<CarsTableModel, Integer> price_per_day;
 
     private ObservableList<CarsTableModel> carsTableModel = FXCollections.observableArrayList();
+    @FXML
+    private Button editButton;
+    @FXML
+    private Button addButton;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        try {
+            System.out.println("userInitCarView");
+            System.out.println(UserSession.getInstace("").getUserId());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            if(UserSession.getInstace("").getUserId().equals(""))
+            {
+                bookCarBtn.setVisible(false);
+                editButton.setVisible(false);
+                System.out.println("dziala");
+                System.out.println(UserSession.getInstace("").getUserRole());
+            }
+            else if(!UserSession.getInstace("").getUserRole().equals("2"))
+            {
+                System.out.println("userdata");
+                System.out.println(UserSession.getInstace(""));
+                System.out.println(UserSession.getInstace("").getUserRole());
+                editButton.setVisible(false);
+                addButton.setVisible(false);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
         this.initializeFactory();
         try {
             this.getCars();
@@ -75,6 +106,7 @@ public class CarViewController implements Initializable {
             e.printStackTrace();
         }
         carCatalogTableView.setItems(carsTableModel);
+
     }
 
     FilteredList filter = new FilteredList(carsTableModel, e -> true);
@@ -115,7 +147,7 @@ public class CarViewController implements Initializable {
     }
 
 
-    public void bookCar(ActionEvent event) throws IOException {
+    public void bookCar(ActionEvent event) throws IOException, SQLException {
         if (UserSession.getInstace("").getUserId().equals("") || UserSession.getInstace("").getUserId().equals(null)) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Aby zamówić auto musisz się zalogować");
@@ -194,8 +226,8 @@ public class CarViewController implements Initializable {
         carCatalogTableView.setItems(sort);
     }
 
-    public void editAction(ActionEvent event) throws IOException {
-        if (UserSession.getInstace("").getUserId().equals("") || UserSession.getInstace("").getUserId().equals(null)) {
+    public void editAction(ActionEvent event) throws IOException, SQLException {
+        if (UserSession.getInstace("").getUserId().equals("") || !UserSession.getInstace("").getUserRole().equals("2")) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Aby edytować auto musisz być administratorem");
             alert.setHeaderText("Aby edytować auto musisz być administratorem");
@@ -215,5 +247,9 @@ public class CarViewController implements Initializable {
              */
             carView.getChildren().setAll(pane);
         }
+    }
+
+    public void addAction(ActionEvent actionEvent) {
+        //
     }
 }

@@ -49,7 +49,11 @@ public class BookCarController implements Initializable {
          * get user instance
          */
         bookDate.setValue(LocalDate.now());
-        System.out.println(UserSession.getInstace("").getUserId());
+        try {
+            System.out.println(UserSession.getInstace("").getUserId());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -121,7 +125,7 @@ public class BookCarController implements Initializable {
              * Set scene and pass data through the scenes
              */
             PassReservationController passsReservationController = loader.getController();
-            passsReservationController.initData(returnDateValue,bookDateValue,carId);
+            passsReservationController.initData(returnDateValue,bookDateValue,carId, returnCity.getText());
             registerFormPanel.getChildren().setAll(pane);
         }
         // CarsEntity car = new CarsEntity();
