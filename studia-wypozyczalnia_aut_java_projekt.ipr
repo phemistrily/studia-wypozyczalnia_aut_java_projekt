@@ -6,6 +6,9 @@
     </profile>
     <version value="1.0" />
   </component>
+  <component name="JavadocGenerationManager">
+    <option name="OUTPUT_DIRECTORY" value="C:/javad" />
+  </component>
   <component name="Palette2">
     <group name="Swing">
       <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
@@ -130,7 +133,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/studia-wypozyczalnia_aut_java_projekt.iml" filepath="$PROJECT_DIR$/studia-wypozyczalnia_aut_java_projekt.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../test2/studia-wypozyczalnia_aut_java_projekt/studia-wypozyczalnia_aut_java_projekt1.iml" filepath="$PROJECT_DIR$/../../test2/studia-wypozyczalnia_aut_java_projekt/studia-wypozyczalnia_aut_java_projekt1.iml" />
+      <module fileurl="file://$USER_HOME$/test2/studia-wypozyczalnia_aut_java_projekt/studia-wypozyczalnia_aut_java_projekt1.iml" filepath="$USER_HOME$/test2/studia-wypozyczalnia_aut_java_projekt/studia-wypozyczalnia_aut_java_projekt1.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">

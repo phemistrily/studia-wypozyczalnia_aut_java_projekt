@@ -41,14 +41,28 @@ public class EditCarController implements Initializable {
      * funkcja przechodząca do katalogu pojazdów z widoku EditCar
      * @param actionEvent
      */
-    public void getCatalogView(ActionEvent actionEvent) {
+    public void getCatalogView(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../fxmlData/carView.fxml"));
+        AnchorPane pane = loader.load();
+        /**
+         * Set scene and pass data through the scenes
+         */
+        editCarPanel.getChildren().setAll(pane);
     }
 
     /**
      * funkcja przechodząca wstecz z widoku EditCar
      * @param actionEvent
      */
-    public void backAction(ActionEvent actionEvent) {
+    public void backAction(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../fxmlData/carView.fxml"));
+        AnchorPane pane = loader.load();
+        /**
+         * Set scene and pass data through the scenes
+         */
+        editCarPanel.getChildren().setAll(pane);
     }
 
     /**

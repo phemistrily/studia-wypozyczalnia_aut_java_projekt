@@ -1,6 +1,7 @@
 package entities;
 
 import controllers.SqlConnector;
+import controllers.SqlInterface;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
@@ -9,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Optional;
 
-public class UserEntity {
+public class UserEntity implements UserEntityInterface, SqlInterface {
 
     SqlConnector sqlConnector;
     private String login;
@@ -27,22 +28,33 @@ public class UserEntity {
      * konstruktor inicjalizujący połączenie z bazą danych
      */
     public UserEntity() {
-        sqlConnector = new SqlConnector();
-        sqlConnector.getConnection("localhost");
+        this.sqlConnector = getLocalhostConnection();
     }
 
+    @Override
+    public SqlConnector getLocalhostConnection() {
+        SqlConnector sqlConnector;
+        sqlConnector = new SqlConnector();
+        sqlConnector.getConnection("localhost");
+        return sqlConnector;
+    }
+
+    @Override
     public String getId() {
         return id;
     }
 
+    @Override
     public void setId(String id) {
         this.id = id;
     }
 
+    @Override
     public String getLogin() {
         return login;
     }
 
+    @Override
     public String getPassword() {
         return password;
     }
@@ -55,6 +67,7 @@ public class UserEntity {
         this.password = password;
     }
 
+    @Override
     public void registesrUser(String login, String password) {
         System.out.println(login);
         System.out.println(password);
@@ -78,6 +91,7 @@ public class UserEntity {
      * @throws SQLException
      * @throws IOException
      */
+    @Override
     public boolean loginUser(String login, String password) throws SQLException, IOException {
 
         this.setLogin(login);
@@ -114,6 +128,7 @@ public class UserEntity {
      * @return
      * @throws SQLException
      */
+    @Override
     public Boolean registerUser(String login, String password, String repeatPassword) throws SQLException {
         this.setLogin(login);
         this.setPassword(password);
@@ -192,6 +207,7 @@ public class UserEntity {
         }
     }
 
+    @Override
     public ResultSet getUserData(String userId)
     {
         String query = "SELECT email, role, active FROM users WHERE id = " + userId;
@@ -200,6 +216,7 @@ public class UserEntity {
         return userData;
     }
 
+    @Override
     public String extractRole(ResultSet userData) {
         try {
             userData.next();
@@ -210,10 +227,12 @@ public class UserEntity {
         return null;
     }
 
+    @Override
     public String getRoleId() {
         return roleId;
     }
 
+    @Override
     public void setRoleId(String roleId) {
         this.roleId = roleId;
     }

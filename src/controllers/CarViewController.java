@@ -33,6 +33,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import java.util.function.Predicate;
 
@@ -62,6 +63,10 @@ public class CarViewController implements Initializable {
     private TableColumn<CarsTableModel, String> localisation;
     @FXML
     private TableColumn<CarsTableModel, Integer> price_per_day;
+    @FXML
+    private DatePicker start_date_picker;
+    @FXML
+    private DatePicker end_date_picker;
 
     private ObservableList<CarsTableModel> carsTableModel = FXCollections.observableArrayList();
     @FXML
@@ -73,6 +78,7 @@ public class CarViewController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        start_date_picker.setValue(LocalDate.now());
         try {
             System.out.println("userInitCarView");
             System.out.println(UserSession.getInstace("").getUserId());
@@ -143,6 +149,13 @@ public class CarViewController implements Initializable {
         }
     }
 
+    private void pushCarsToModelByDate(LocalDate bookDate, LocalDate returnDate) throws SQLException {
+        CarsEntity cars = new CarsEntity();
+        ResultSet carsData = cars.getCarsByDate(bookDate,returnDate);
+        carCatalogTableView.getItems().clear();
+        this.putCarsToCarsTableModel(carsData);
+    }
+
 
     @FXML
     void backStepButton(ActionEvent event) {
@@ -153,6 +166,8 @@ public class CarViewController implements Initializable {
     void mainAppView(ActionEvent event) {
 
     }
+
+
 
 
     public void bookCar(ActionEvent event) throws IOException, SQLException {
@@ -260,7 +275,7 @@ public class CarViewController implements Initializable {
             alert.showAndWait();
         } else {
             CarsTableModel car = carCatalogTableView.getSelectionModel().getSelectedItem();
-            System.out.println(car.getLp());
+            //System.out.println(car.getLp());
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("../fxmlData/editCar.fxml"));
             AnchorPane pane = loader.load();
@@ -275,5 +290,12 @@ public class CarViewController implements Initializable {
 
     public void addAction(ActionEvent actionEvent) {
         //
+    }
+
+    @FXML
+    public void generateWithDate(ActionEvent actionEvent) throws SQLException {
+        LocalDate returnDateValue = end_date_picker.getValue();
+        LocalDate bookDateValue = start_date_picker.getValue();
+        this.pushCarsToModelByDate(bookDateValue, returnDateValue);
     }
 }

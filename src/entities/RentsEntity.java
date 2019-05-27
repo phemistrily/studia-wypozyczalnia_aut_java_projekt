@@ -1,21 +1,29 @@
 package entities;
 
 import controllers.SqlConnector;
+import controllers.SqlInterface;
 import models.UserSession;
 
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class RentsEntity {
+public class RentsEntity implements RentsEntityInterface, SqlInterface {
     SqlConnector sqlConnector;
 
     /**
      * konstruktor klasy inicjalizujacy połączoenie z bazaa danych
      */
     public RentsEntity() {
+        this.sqlConnector = getLocalhostConnection();
+    }
+
+    @Override
+    public SqlConnector getLocalhostConnection() {
+        SqlConnector sqlConnector;
         sqlConnector = new SqlConnector();
         sqlConnector.getConnection("localhost");
+        return sqlConnector;
     }
 
     /**
@@ -24,6 +32,7 @@ public class RentsEntity {
      * @throws SQLException
      * @throws IOException
      */
+    @Override
     public ResultSet getRents() throws SQLException, IOException {
         String query = "SELECT" +
                 "    r.id as lp," +
@@ -40,6 +49,7 @@ public class RentsEntity {
         return rentsData;
     }
 
+    @Override
     public void createRent(String bookDate, String returnDate, Integer carId, String returnCity) throws SQLException {
         String createRentQuery = "INSERT INTO rents (car_id, start_date, end_date, start_city, end_city, user_id, cash_per_day)" +
                 " SELECT " + carId + ",'" + bookDate + " 00:00:00','" +

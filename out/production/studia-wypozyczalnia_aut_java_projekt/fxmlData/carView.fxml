@@ -42,9 +42,9 @@
         <Text fill="WHITE" layoutX="23.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Klasie" />
         <Text fill="WHITE" layoutX="135.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filtruj po:" />
         <Button fx:id="editButton" layoutX="437.0" layoutY="561.0" mnemonicParsing="false" onAction="#editAction" style="-fx-background-color: #569DAB;" styleClass="buttonsApp" text="Edytuj auto" textFill="#f8f8f8" textOverrun="CLIP" />
-      <DatePicker layoutX="92.0" layoutY="484.0" prefHeight="25.0" prefWidth="149.0" />
-      <DatePicker layoutX="92.0" layoutY="524.0" prefHeight="25.0" prefWidth="149.0" />
-      <Button layoutX="92.0" layoutY="561.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #569DAB;" styleClass="buttonsApp" text="Patryka button" textFill="#f8f8f8" textOverrun="CLIP" />
+      <DatePicker fx:id="start_date_picker" layoutX="92.0" layoutY="484.0" prefHeight="25.0" prefWidth="149.0" />
+      <DatePicker fx:id="end_date_picker" layoutX="92.0" layoutY="524.0" prefHeight="25.0" prefWidth="149.0" />
+      <Button layoutX="92.0" layoutY="561.0" mnemonicParsing="false" onAction="#generateWithDate" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #569DAB;" styleClass="buttonsApp" text="Wygeneruj po dacie" textFill="#f8f8f8" textOverrun="CLIP" />
       <Text fill="WHITE" layoutX="14.0" layoutY="501.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data od" />
       <Text fill="WHITE" layoutX="14.0" layoutY="541.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data do" />
       <Separator layoutX="14.0" layoutY="475.0" prefHeight="0.0" prefWidth="226.0" />
